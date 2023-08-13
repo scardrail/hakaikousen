@@ -1,0 +1,22 @@
+{
+  "HAKAIKOUSEN.AbilityStr": "Strength",
+  "HAKAIKOUSEN.AbilityCon": "Constitution",
+  "HAKAIKOUSEN.AbilityDex": "Dexterity",
+  "HAKAIKOUSEN.AbilityInt": "Intelligence",
+  "HAKAIKOUSEN.AbilityWis": "Wisdom",
+  "HAKAIKOUSEN.AbilityCha": "Charisma",
+
+  "HAKAIKOUSEN.AbilityStrAbbr": "str",
+  "HAKAIKOUSEN.AbilityConAbbr": "con",
+  "HAKAIKOUSEN.AbilityDexAbbr": "dex",
+  "HAKAIKOUSEN.AbilityIntAbbr": "int",
+  "HAKAIKOUSEN.AbilityWisAbbr": "wis",
+  "HAKAIKOUSEN.AbilityChaAbbr": "cha",
+
+  "HAKAIKOUSEN.EffectCreate": "Create Effect",
+  "HAKAIKOUSEN.EffectToggle": "Toggle Effect",
+  "HAKAIKOUSEN.EffectEdit": "Edit Effect",
+  "HAKAIKOUSEN.EffectDelete": "Delete Effect",
+
+  "HAKAIKOUSEN.Add": "Add"
+}
