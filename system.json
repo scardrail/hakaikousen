@@ -1,11 +1,16 @@
 {
-  "name": "hakaikousen",
+  "id": "hakaikousen",
   "title": "Hakai Kousen",
   "description": "The Hakai Kousen system for FoundryVTT!",
   "version": "1.0.0",
-  "minimumCoreVersion": "0.8.6",
-  "compatibleCoreVersion": "9",
-  "author": "Scardrail",
+  "compatibility": {
+    "minimum": 10,
+    "verified": "10.288",
+    "maximum": 10
+  },
+  "authors": [{
+    "name": "Scardrail"
+  }],
   "esmodules": ["module/hakaikousen.mjs"],
   "styles": ["css/hakaikousen.css"],
   "scripts": [],
@@ -15,14 +20,20 @@
       "lang": "en",
       "name": "English",
       "path": "lang/en.json"
+    },
+    {
+      "lang": "fr",
+      "name": "Francais",
+      "path": "lang/fr.json"
     }
   ],
   "gridDistance": 5,
-  "gridUnits": "ft",
+  "gridUnits": "m",
   "primaryTokenAttribute": "health",
   "secondaryTokenAttribute": "power",
   "url": "",
   "manifest": "",
   "download": "",
-  "license": "LICENSE.txt"
+  "license": "LICENSE.txt",
+  "changelog": "CHANGELOG.md"
 }
