@@ -1,11 +1,5 @@
 export const HAKAIKOUSEN = {};
 
-// Define constants here, such as:
-HAKAIKOUSEN.foobar = {
-  'bas': 'HAKAIKOUSEN.bas',
-  'bar': 'HAKAIKOUSEN.bar'
-};
-
 /**
  * The set of Ability Scores used within the sytem.
  * @type {Object}
