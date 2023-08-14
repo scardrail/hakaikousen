@@ -5,44 +5,20 @@
     <img class="profile-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}" height="100" width="100"/>
     <div class="header-fields">
       <h1 class="charname"><input name="name" type="text" value="{{actor.name}}" placeholder="Name"/></h1>
-      <div class="resources grid grid-3col">
-        <div class="stat flexrow flex-group-center">
-          <label class="resource-label">STATS :</label>
-          <label class="resource-label">BASE :</label>
-          <label class="resource-label">POINTS :</label>
-          <label class="resource-label">TOTAL :</label>
-          <label class="resource-label">TEMP :</label>
-        </div><div class="stat flexrow flex-group-center">
-          <label class="resource-label">STATS :</label>
-          <label class="resource-label">BASE :</label>
-          <label class="resource-label">POINTS :</label>
-          <label class="resource-label">TOTAL :</label>
-          <label class="resource-label">TEMP :</label>
-        </div><div class="stat flexrow flex-group-center">
-          <label class="resource-label">STATS :</label>
-          <label class="resource-label">BASE :</label>
-          <label class="resource-label">POINTS :</label>
-          <label class="resource-label">TOTAL :</label>
-          <label class="resource-label">TEMP :</label>
-        </div>
-        <div class="abilities grid grid-3col">
-          {{#each system.stats as |stats key|}}
-          <div class="stat flexrow flex-group-center">
-            <label for="system.stats.{{key}}.value" class="resource-label">{{key}}</label>
-            <input type="number" name="system.stats.{{key}}.base" value="{{stats.base}}" data-dtype="Number" />
-            <input type="number" name="system.stats.{{key}}.points" value="{{stats.points}}" data-dtype="Number" />
-            <span class="stats-value">{{numberFormat stats.value decimals=0}}</span>
-            <span class="stats-mod">{{numberFormat stats.mod decimals=0 sign=true}}</span>
+      <div class="resources grid grid-2col">
+        <div class="resource flex-group-center">
+          <div class="resource-content flexrow flex-center flex-between">
+            <label for="system.experience_points.value" class="resource-label">Experience Points</label>
+            <input type="Number" name="system.experience_points.value" value="{{system.experience_points.value}}"
+              data-dtype="Number" />
           </div>
-          {{/each}}
         </div>
-       
-      </div>
-      <div class="resource flex-group-center">
-        <div class="resource-content flexrow flex-center flex-between">
-          <label for="system.experience_points.value" class="resource-label">Experience Points</label>
-          <input type="text" name="system.experience_points.value" value="{{system.experience_points.value}}"
-            data-dtype="Number" />
+        <div class="resource flex-group-center">
+          <div class="resource-content flexrow flex-center flex-between">
+            <label for="system.money.value" class="resource-label">Money</label>
+            <input type="Number" name="system.money.value" value="{{system.money.value}}"
+              data-dtype="Number" />
+          </div>
         </div>
       </div>
     </div>
@@ -51,7 +27,7 @@
   {{!-- Sheet Tab Navigation --}}
   <nav class="sheet-tabs tabs" data-group="primary">
     {{!-- Default tab is specified in actor-sheet.mjs --}}
-    <a class="item" data-tab="features">Features</a>
+    <a class="item" data-tab="competences">Competences</a>
     <a class="item" data-tab="description">Description</a>
     <a class="item" data-tab="items">Items</a>
     <a class="item" data-tab="spells">Spells</a>
@@ -61,16 +37,25 @@
   {{!-- Sheet Body --}}
   <section class="sheet-body">
 
-    {{!-- Owned Features Tab --}}
-    <div class="tab features" data-group="primary" data-tab="features">
+    {{!-- Owned Skill Knowledge Tab --}}
+    <div class="tab features" data-group="primary" data-tab="competences">
       <section class="grid grid-3col">
         <aside class="sidebar">
-          <div class="abilities flexcol">
-            {{#each system.abilities as |ability key|}}
-            <div class="ability flexrow flex-group-center">
-              <label for="system.abilities.{{key}}.value" class="resource-label rollable flexlarge align-left" data-roll="d20+@abilities.{{key}}.mod" data-label="{{ability.label}}">{{ability.label}}</label>
-              <input type="text" name="system.abilities.{{key}}.value" value="{{ability.value}}" data-dtype="Number"/>
-              <span class="ability-mod rollable" data-roll="d20+@abilities.{{key}}.mod" data-label="{{ability.label}}">{{numberFormat ability.mod decimals=0 sign=true}}</span>
+          <div class="abilities">
+            <div class="stat flexrow flex-group-center">
+              <label class="resource-label">STATS :</label>
+              <label class="resource-label">BASE :</label>
+              <label class="resource-label">POINTS :</label>
+              <label class="resource-label">TOTAL :</label>
+              <label class="resource-label">TEMP :</label>
+            </div>
+            {{#each system.stats as |stats key|}}
+            <div class="stat flexrow flex-group-center">
+              <label for="system.stats.{{key}}.value" class="resource-label">{{key}}</label>
+              <input type="number" name="system.stats.{{key}}.base" value="{{stats.base}}" data-dtype="Number" />
+              <input type="number" name="system.stats.{{key}}.points" value="{{stats.points}}" data-dtype="Number" />
+              <span class="stats-value">{{numberFormat stats.value decimals=0}}</span>
+              <span class="stats-mod">{{numberFormat stats.mod decimals=0 sign=true}}</span>
             </div>
             {{/each}}
           </div>

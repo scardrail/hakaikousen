@@ -78,7 +78,9 @@
   "Item": {
     "types": [
       "item",
-      "badges"
+      "badges",
+      "skill",
+      // "knowledge"
     ],
     "templates": {
       "base": {
@@ -101,6 +103,18 @@
     "badges": {
       "templates": [
         "base"
+      ]
+    },
+    "skill": {
+      "templates": [
+        "base",
+        "capacities"
+      ]
+    },
+    "knowledge": {
+      "templates": [
+        "base",
+        "capacities"
       ]
     }
   }
