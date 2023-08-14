@@ -16,9 +16,9 @@
         <div class="resource flex-group-center">
           <label for="system.health.value" class="resource-label">Health</label>
           <div class="resource-content flexrow flex-center flex-between">
-          <input type="text" name="system.health.value" value="{{system.health.value}}" data-dtype="Number"/>
+          <input type="text" name="system.health.value" value="{{system.stats.VIT.value}}" data-dtype="Number"/>
           <span> / </span>
-          <input type="text" name="system.health.max" value="{{system.health.max}}" data-dtype="Number"/>
+          <input type="text" name="system.health.max" value="{{system.stats.VIT.max}}" data-dtype="Number"/>
           </div>
         </div>
 
@@ -32,9 +32,9 @@
         </div>
 
         <div class="resource flex-group-center">
-          <label for="system.attributes.level.value" class="resource-label">Level</label>
+          <label for="system.experience_points.value" class="resource-label">Experience Points</label>
           <div class="resource-content flexrow flex-center flex-between">
-          <input type="text" name="system.attributes.level.value" value="{{system.attributes.level.value}}" data-dtype="Number"/>
+          <input type="text" name="system.experience_points.value" value="{{system.experience_points.value}}" data-dtype="Number"/>
           </div>
         </div>
 
@@ -85,8 +85,7 @@
 
     {{!-- Biography Tab --}}
     <div class="tab biography" data-group="primary" data-tab="description">
-      {{!-- If you want TinyMCE editors to output inline rolls when rendered, you need to pass the actor's roll data to the rollData property. --}}
-      {{editor content=system.biography target="system.biography" rollData=rollData button=true owner=owner editable=editable}}
+      {{> "systems/hakaikousen/templates/actor/parts/actor-description.html"}}
     </div>
 
     {{!-- Owned Items Tab --}}
