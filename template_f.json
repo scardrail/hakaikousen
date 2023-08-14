@@ -1,0 +1,212 @@
+{
+  "Actor": {
+    "types": [
+      "dresseur",
+      "pokemon"
+    ],
+    "templates": {
+      "base": {
+        "description": {
+          "gender": "",
+          "height": "",
+          "weight": ""
+        },
+        "experience_points": 0,
+        "biography": ""
+      }
+    },
+    "dresseur": {
+      "templates": [
+        "base"
+      ],
+      "description": {
+        "name": "",
+        "age": "",
+        "skin": "",
+        "origin": "",
+        "eyes": "",
+        "hair": "",
+        "body_type": "",
+        "vocation": "",
+        "nature": ""
+      },
+      "money": 0,
+      "stats": {
+        "DEX": {
+          "base": 0,
+          "points": 0,
+          "max": 0,
+          "value": 0
+        },
+        "FOR": {
+          "base": 0,
+          "points": 0,
+          "max": 0,
+          "value": 0
+        },
+        "CON": {
+          "base": 0,
+          "points": 0,
+          "max": 0,
+          "value": 0
+        },
+        "END": {
+          "base": 0,
+          "points": 0,
+          "max": 0,
+          "value": 0
+        },
+        "VOL": {
+          "base": 0,
+          "points": 0,
+          "max": 0,
+          "value": 0
+        },
+        "VIT": {
+          "base": 0,
+          "points": 0,
+          "max": 0,
+          "value": 0
+        }
+      },
+      "pc": {
+        "pokemons": [],
+        "items": [],
+        "money": 0
+      }
+    },
+    "pokemon": {
+      "templates": [
+        "base"
+      ],
+      "description": {
+        "nickname": "",
+        "trainer": "",
+        "origin": "",
+        "status": ""
+      },
+      "held_item": "",
+      "trainer_link": {
+        "trust": 8,
+        "obedience": 8,
+        "training": 8
+      },
+      "stats": {
+        "DEX": {
+          "base": 0,
+          "EV": 0,
+          "IV": 0,
+          "nature": 0,
+          "max": 0,
+          "value": 0,
+          "MEGA": 0
+        },
+        "FOR": {
+          "base": 0,
+          "EV": 0,
+          "IV": 0,
+          "nature": 0,
+          "max": 0,
+          "value": 0,
+          "MEGA": 0
+        },
+        "CON": {
+          "base": 0,
+          "EV": 0,
+          "IV": 0,
+          "nature": 0,
+          "max": 0,
+          "value": 0,
+          "MEGA": 0
+        },
+        "END": {
+          "base": 0,
+          "EV": 0,
+          "IV": 0,
+          "nature": 0,
+          "max": 0,
+          "value": 0,
+          "MEGA": 0
+        },
+        "VOL": {
+          "base": 0,
+          "EV": 0,
+          "IV": 0,
+          "nature": 0,
+          "max": 0,
+          "value": 0,
+          "MEGA": 0
+        },
+        "VIT": {
+          "base": 0,
+          "EV": 0,
+          "IV": 0,
+          "nature": 0,
+          "max": 0,
+          "value": 0,
+          "MEGA": 0
+        }
+      },
+      "food_preferences": {
+        "liked": "",
+        "disliked": ""
+      }
+    }
+  },
+  "Item": {
+    "types": [
+      "item",
+      "pkmn_specie",
+      "badge",
+      "move",
+      "z_move",
+      "z_crystal",
+      "skill",
+      "knowledge",
+      "type",
+      "talent",
+      "training_session",
+      "taste",
+      "nature"
+
+    ],
+    "templates": {
+      "base": {
+        "name": "",
+        "description": ""
+      },
+      "capacities": {
+        "points": 0,
+        "specialization": ""
+      }
+    },
+    "items": {
+      "templates": [
+        "base"
+      ],
+      "type": "",
+      "quantity": 1,
+      "price": 0
+    },
+    "badges": {
+      "templates": [
+        "base"
+      ]
+    },
+    "z_crystal": {
+      "templates": [
+        "base"
+      ]
+    },
+    "skills": {
+      "templates": [
+        "capacities"
+      ]
+    },
+    "knowledges": {
+      "templates": [
+        "capacities"
+      ]
+    }
+  }
+}
