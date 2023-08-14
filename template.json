@@ -34,38 +34,38 @@
         "DEX": {
           "base": 0,
           "points": 0,
-          "max": 0,
-          "value": 0
+          "value": 0,
+          "mod": 0
         },
         "FOR": {
           "base": 0,
           "points": 0,
-          "max": 0,
-          "value": 0
+          "value": 0,
+          "mod": 0
         },
         "CON": {
           "base": 0,
           "points": 0,
-          "max": 0,
-          "value": 0
+          "value": 0,
+          "mod": 0
         },
         "END": {
           "base": 0,
           "points": 0,
-          "max": 0,
-          "value": 0
+          "value": 0,
+          "mod": 0
         },
         "VOL": {
           "base": 0,
           "points": 0,
-          "max": 0,
-          "value": 0
+          "value": 0,
+          "mod": 0
         },
         "VIT": {
           "base": 0,
           "points": 0,
-          "max": 0,
-          "value": 0
+          "value": 0,
+          "mod": 0
         }
       },
       "pc": {
