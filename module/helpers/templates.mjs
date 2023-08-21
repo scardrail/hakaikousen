@@ -7,10 +7,9 @@
   return loadTemplates([
 
     // Actor partials.
-    "systems/hakaikousen/templates/actor/parts/actor-features.html",
+    "systems/hakaikousen/templates/actor/parts/actor-competences.html",
     "systems/hakaikousen/templates/actor/parts/actor-description.html",
     "systems/hakaikousen/templates/actor/parts/actor-items.html",
-    "systems/hakaikousen/templates/actor/parts/actor-spells.html",
-    "systems/hakaikousen/templates/actor/parts/actor-effects.html",
+    "systems/hakaikousen/templates/actor/parts/actor-features.html"
   ]);
 };
