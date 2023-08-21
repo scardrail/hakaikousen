@@ -11,8 +11,8 @@ export class HakaiKousenActorSheet extends ActorSheet {
     return mergeObject(super.defaultOptions, {
       classes: ["hakaikousen", "sheet", "actor"],
       template: "systems/hakaikousen/templates/actor/actor-sheet.html",
-      width: 600,
-      height: 600,
+      width: 900,
+      height: 550,
       tabs: [{ navSelector: ".sheet-tabs", contentSelector: ".sheet-body", initial: "description" }]
     });
   }
@@ -89,6 +89,7 @@ export class HakaiKousenActorSheet extends ActorSheet {
     // Initialize containers.
     const gear = [];
     const skills = [];
+    const knowledges = [];
     const spells = {
       0: [],
       1: [],
@@ -113,6 +114,10 @@ export class HakaiKousenActorSheet extends ActorSheet {
       else if (i.type === 'skill') {
         skills.push(i);
       }
+      // Append to knowledges.
+      else if (i.type === 'knowledge') {
+        knowledges.push(i);
+      }
       // Append to spells.
       else if (i.type === 'spell') {
         if (i.system.spellLevel != undefined) {
@@ -124,6 +129,7 @@ export class HakaiKousenActorSheet extends ActorSheet {
     // Assign and return
     context.gear = gear;
     context.skills = skills;
+    context.knowledges = knowledges;
     context.spells = spells;
   }
 
