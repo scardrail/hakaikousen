@@ -80,7 +80,7 @@
       "item",
       "badges",
       "skill",
-      // "knowledge"
+      "knowledge"
     ],
     "templates": {
       "base": {
