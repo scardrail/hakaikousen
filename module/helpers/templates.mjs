@@ -10,6 +10,14 @@
     "systems/hakaikousen/templates/actor/parts/actor-competences.html",
     "systems/hakaikousen/templates/actor/parts/actor-description.html",
     "systems/hakaikousen/templates/actor/parts/actor-items.html",
-    "systems/hakaikousen/templates/actor/parts/actor-features.html"
+    "systems/hakaikousen/templates/actor/parts/actor-features.html",
+
+    //chat templates
+    "systems/hakaikousen/templates/chat/basic-card.html",
+    "systems/hakaikousen/templates/chat/rollCheck.html",
+    "templates/dice/roll.html",
+
+    //dialogs templates
+    "systems/hakaikousen/templates/dialog/task-check-dialog.html",
   ]);
 };

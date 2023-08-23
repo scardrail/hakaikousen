@@ -1,0 +1,6 @@
+{{> "templates/dice/roll.html"}}
+{{#if (upperEq total 0)}}
+    <h2 style="color: rgb(0, 94, 0);">Success</h2>
+{{else}}
+    <h2 style="color: rgb(122, 0, 0);">Failure</h2>
+{{/if}}
