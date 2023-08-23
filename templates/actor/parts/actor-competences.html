@@ -10,10 +10,10 @@
       </div>
       {{#each system.stats as |stats key|}}
       <div class="stat flexrow flex-group-center">
-        <label for="system.stats.{{key}}.value" class="resource-label">{{key}}</label>
+        <label for="system.stats.{{key}}.value" class="resource-label  rollable" data-tasktype="stats" data-label="{{key}}">{{key}}</label>
         <input type="number" name="system.stats.{{key}}.base" value="{{stats.base}}" data-dtype="Number" />
         <input type="number" name="system.stats.{{key}}.points" value="{{stats.points}}" data-dtype="Number" />
-        <span class="stats-value rollable" data-tasktype="stats" data-label="{{key}}">{{numberFormat stats.value decimals=0}}</span>
+        <span class="stats-value">{{numberFormat stats.value decimals=0}}</span>
         <input type="number" name="system.stats.{{key}}.mod" value="{{stats.mod}}" data-dtype="Number" />
       </div>
       {{/each}}
