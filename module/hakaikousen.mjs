@@ -6,6 +6,7 @@ import { HakaiKousenActorSheet } from "./sheets/actor-sheet.mjs";
 import { HakaiKousenItemSheet } from "./sheets/item-sheet.mjs";
 // Import helper/utility classes and constants.
 import { preloadHandlebarsTemplates } from "./helpers/templates.mjs";
+import { registerHandlebarsHelpers } from "./helpers/helpers.mjs";
 import { HAKAIKOUSEN } from "./helpers/config.mjs";
 
 /* -------------------------------------------- */
@@ -45,6 +46,8 @@ Hooks.once('init', async function() {
   Items.unregisterSheet("core", ItemSheet);
   Items.registerSheet("hakaikousen", HakaiKousenItemSheet, { makeDefault: true });
 
+  // Register Handlebars helpers
+  registerHandlebarsHelpers();
   // Preload Handlebars templates.
   return preloadHandlebarsTemplates();
 });
