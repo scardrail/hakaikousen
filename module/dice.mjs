@@ -1,6 +1,7 @@
 export async function TaskCheck({
     element = null,
     actor = null,
+    item = null,
     difficulty = 0,
     tempMod = 0,
 
@@ -11,21 +12,30 @@ export async function TaskCheck({
     if (checkOptions.canceled){
       return;
     }
-
     difficulty = checkOptions.difficulty;
     tempMod = checkOptions.tempMod;
-    let thresholds = {
-      "stats": "(" + actor.system.stats[dataset.label].value+"+"+actor.system.stats[dataset.label].mod+")",
-      "skill": difficulty,
-      "knowledge": difficulty,
+    let thresholds = 0;
+    let formulas = null;
+    switch (dataset.tasktype){
+      case "stats": {
+        console.log("stats");
+        thresholds = actor.system.stats[dataset.label].value+actor.system.stats[dataset.label].mod+tempMod; 
+        formulas = `d6cs<=${thresholds}`;
+        break;
+      }
+      case "skill": {
+        console.log("skill");
+        thresholds = difficulty;
+        formulas = `{${item.points}d10kh+${tempMod}}cs>=${thresholds}`;
+        break;}
+      case "knowledge":{
+        console.log("knowledge");
+        thresholds = difficulty;
+        formulas = `{${item.points}d10kh+${tempMod}}cs>=${thresholds}`;
+        break;}
     };
-    let formulas = {
-      "stats": `d6cs<=${thresholds[dataset.tasktype]}df>${thresholds[dataset.tasktype]}+${tempMod}`,
-    }
-    // Handle item rolls.
     if (dataset.rollType) {
       if (dataset.rollType == 'item') {
-        // const itemId = element.closest('.item').dataset.itemId;
         const item = actor.items.get(itemId);
         if (item) return item.roll();
       }
@@ -33,22 +43,17 @@ export async function TaskCheck({
 
     // Handle rolls that supply the formula directly.
     if (dataset.tasktype) {
-      if (dataset.tasktype == "stats") {
-        let label = dataset.label ? `[roll] ${dataset.label}` : '';
-        // let roll = new Roll(formula, actor.getRollData());
-        let chatTemplate = "systems/hakaikousen/templates/chat/basic-card.html";
+      let label = dataset.label ? `[roll] ${dataset.label}` : '';
+      let chatTemplate = "systems/hakaikousen/templates/chat/basic-card.html";
+      let rollResult = new Roll(formulas).evaluate({async: false});
+      let renderedRoll = await rollResult.render({flavor: label, template: chatTemplate});
 
-        let rollResult = new Roll(formulas[dataset.tasktype]).evaluate({async: false});
-        console.log(rollResult);
-        let renderedRoll = await rollResult.render({flavor: label, template: chatTemplate});
-
-        let messageData = {
-          speaker: ChatMessage.getSpeaker({ actor: actor }),
-          rollMode: game.settings.get('core', 'rollMode'),
-          content: renderedRoll,
-        }
-        rollResult.toMessage(messageData);
+      let messageData = {
+        speaker: ChatMessage.getSpeaker({ actor: actor }),
+        rollMode: game.settings.get('core', 'rollMode'),
+        content: renderedRoll,
       }
+      rollResult.toMessage(messageData);
     }
 }
 

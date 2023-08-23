@@ -11,7 +11,7 @@
     {{#each skills as |item id|}}
     <li class="item flexrow" data-item-id="{{item._id}}">
       <div class="item-name">
-        <h4>{{item.name}}</h4>
+        <h4 class="rollable" data-tasktype="skill" data-label="{{item.name}}">{{item.name}}</h4>
       </div>
       <div class="item-points item-prop">{{item.system.points}}</div>
       <div class="item-controls">
@@ -33,7 +33,7 @@
     {{#each knowledges as |item id|}}
     <li class="item flexrow" data-item-id="{{item._id}}">
       <div class="item-name">
-        <h4>{{item.name}}</h4>
+        <h4 class="rollable" data-tasktype="knowledge" data-label="{{item.name}}">{{item.name}}</h4>
       </div>
       <div class="item-points item-prop">{{item.system.points}}</div>
       <div class="item-controls">

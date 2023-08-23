@@ -215,9 +215,20 @@ export class HakaiKousenActorSheet extends ActorSheet {
   _onRoll(event) {
     event.preventDefault();
     const element = event.currentTarget;
+    let item = null;
     let actor = this.actor;
 
-    Dice.TaskCheck({element, actor});
+    if(element.dataset.tasktype != "stats"){
+      console.log("tasktype : ", element.dataset.tasktype);
+      const itemId = element.closest(".item").dataset.itemId;
+      console.log("itemId : ", itemId);
+      item = actor.items.get(itemId).system;
+    }
+
+    console.log("actor : ", actor);
+    console.log("item : ", item);
+
+    Dice.TaskCheck({element, actor, item});
   }
 
 }
