@@ -1,22 +1,26 @@
 {
-  "HAKAIKOUSEN.AbilityStr": "Strength",
-  "HAKAIKOUSEN.AbilityCon": "Constitution",
-  "HAKAIKOUSEN.AbilityDex": "Dexterity",
-  "HAKAIKOUSEN.AbilityInt": "Intelligence",
-  "HAKAIKOUSEN.AbilityWis": "Wisdom",
-  "HAKAIKOUSEN.AbilityCha": "Charisma",
+    "HAKAIKOUSEN.StatsStr": "Strength",
+    "HAKAIKOUSEN.StatsCon": "Constitution",
+    "HAKAIKOUSEN.StatsDex": "Dexterity",
+    "HAKAIKOUSEN.StatsVit": "Vitality",
+    "HAKAIKOUSEN.StatsEnd": "Stamina",
+    "HAKAIKOUSEN.StatsVol": "Will",
 
-  "HAKAIKOUSEN.AbilityStrAbbr": "str",
-  "HAKAIKOUSEN.AbilityConAbbr": "con",
-  "HAKAIKOUSEN.AbilityDexAbbr": "dex",
-  "HAKAIKOUSEN.AbilityIntAbbr": "int",
-  "HAKAIKOUSEN.AbilityWisAbbr": "wis",
-  "HAKAIKOUSEN.AbilityChaAbbr": "cha",
+    "HAKAIKOUSEN.StatsStrAbbr": "FOR",
+    "HAKAIKOUSEN.StatsConAbbr": "CON",
+    "HAKAIKOUSEN.StatsDexAbbr": "DEX",
+    "HAKAIKOUSEN.StatsVitAbbr": "VIT",
+    "HAKAIKOUSEN.StatsEndAbbr": "STA",
+    "HAKAIKOUSEN.StatsVolAbbr": "WIL",
 
   "HAKAIKOUSEN.EffectCreate": "Create Effect",
   "HAKAIKOUSEN.EffectToggle": "Toggle Effect",
   "HAKAIKOUSEN.EffectEdit": "Edit Effect",
   "HAKAIKOUSEN.EffectDelete": "Delete Effect",
 
-  "HAKAIKOUSEN.Add": "Add"
+  "HAKAIKOUSEN.Add": "Add",
+  "HAKAIKOUSEN.Success": "Success",
+  "HAKAIKOUSEN.Failure": "Failure",
+
+  "HAKAIKOUSEN.Stat": "Stat : "
 }
