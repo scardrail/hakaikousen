@@ -1,23 +1,23 @@
 export const HAKAIKOUSEN = {};
 
 /**
- * The set of Ability Scores used within the sytem.
+ * The set of Stats Scores used within the sytem.
  * @type {Object}
  */
- HAKAIKOUSEN.abilities = {
-  "str": "HAKAIKOUSEN.AbilityStr",
-  "dex": "HAKAIKOUSEN.AbilityDex",
-  "con": "HAKAIKOUSEN.AbilityCon",
-  "int": "HAKAIKOUSEN.AbilityInt",
-  "wis": "HAKAIKOUSEN.AbilityWis",
-  "cha": "HAKAIKOUSEN.AbilityCha"
+ HAKAIKOUSEN.stats = {
+  "str": "HAKAIKOUSEN.StatsStr",
+  "dex": "HAKAIKOUSEN.StatsDex",
+  "con": "HAKAIKOUSEN.StatsCon",
+  "int": "HAKAIKOUSEN.StatsInt",
+  "wis": "HAKAIKOUSEN.StatsWis",
+  "cha": "HAKAIKOUSEN.StatsCha"
 };
 
-HAKAIKOUSEN.abilityAbbreviations = {
-  "str": "HAKAIKOUSEN.AbilityStrAbbr",
-  "dex": "HAKAIKOUSEN.AbilityDexAbbr",
-  "con": "HAKAIKOUSEN.AbilityConAbbr",
-  "int": "HAKAIKOUSEN.AbilityIntAbbr",
-  "wis": "HAKAIKOUSEN.AbilityWisAbbr",
-  "cha": "HAKAIKOUSEN.AbilityChaAbbr"
+HAKAIKOUSEN.statsAbbreviations = {
+  "str": "HAKAIKOUSEN.StatsStrAbbr",
+  "dex": "HAKAIKOUSEN.StatsDexAbbr",
+  "con": "HAKAIKOUSEN.StatsConAbbr",
+  "int": "HAKAIKOUSEN.StatsIntAbbr",
+  "wis": "HAKAIKOUSEN.StatsWisAbbr",
+  "cha": "HAKAIKOUSEN.StatsChaAbbr"
 };
