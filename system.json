@@ -5,8 +5,8 @@
   "version": "1.0.0",
   "compatibility": {
     "minimum": 10,
-    "verified": "10.288",
-    "maximum": 10
+    "verified": "11.307",
+    "maximum": 12
   },
   "authors": [{
     "name": "Scardrail"
