@@ -3,7 +3,7 @@
         <label>Modifier</label>
         <input type="number" name="tempMod" value="0" data-dtype="Number">
     </div>
-    {{#if (equals tasktype skill)}}
+    {{#if (eqNot tasktype "stats")}}
     <div class="form-group">
         <label>Difficulty</label>
         <input type="number" name ="difficulty" value="0" data-dtype="Number">
