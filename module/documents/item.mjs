@@ -12,6 +12,20 @@ export class HakaiKousenItem extends Item {
     super.prepareData();
   }
 
+    /** @override */
+  prepareBaseData() {
+    // Data modifications in this step occur before processing embedded
+    // documents or derived data.
+  }
+  
+  prepareDerivedData() {
+    const itemData = this;
+    const systemData = itemData.system;
+    const flags = itemData.flags.hakaikousen || {};
+
+    systemData.name = itemData.name;
+  }
+
   /**
    * Prepare a data object which is passed to any Roll formulas which are created related to this Item
    * @private
