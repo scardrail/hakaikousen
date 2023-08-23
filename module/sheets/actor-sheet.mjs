@@ -1,4 +1,5 @@
 import {onManageActiveEffect, prepareActiveEffectCategories} from "../helpers/effects.mjs";
+import * as Dice from "../dice.mjs"
 
 /**
  * Extend the basic ActorSheet with some very simple modifications
@@ -72,9 +73,9 @@ export class HakaiKousenActorSheet extends ActorSheet {
    * @return {undefined}
    */
   _prepareCharacterData(context) {
-    // Handle ability scores.
-    for (let [k, v] of Object.entries(context.system.abilities)) {
-      v.label = game.i18n.localize(CONFIG.HAKAIKOUSEN.abilities[k]) ?? k;
+    // Handle stats scores.
+    for (let [k, v] of Object.entries(context.system.stats)) {
+      v.label = game.i18n.localize(CONFIG.HAKAIKOUSEN.stats[k]) ?? k;
     }
   }
 
@@ -213,28 +214,9 @@ export class HakaiKousenActorSheet extends ActorSheet {
   _onRoll(event) {
     event.preventDefault();
     const element = event.currentTarget;
-    const dataset = element.dataset;
+    let actor = this.actor;
 
-    // Handle item rolls.
-    if (dataset.rollType) {
-      if (dataset.rollType == 'item') {
-        const itemId = element.closest('.item').dataset.itemId;
-        const item = this.actor.items.get(itemId);
-        if (item) return item.roll();
-      }
-    }
-
-    // Handle rolls that supply the formula directly.
-    if (dataset.roll) {
-      let label = dataset.label ? `[roll] ${dataset.label}` : '';
-      let roll = new Roll(dataset.roll, this.actor.getRollData());
-      roll.toMessage({
-        speaker: ChatMessage.getSpeaker({ actor: this.actor }),
-        flavor: label,
-        rollMode: game.settings.get('core', 'rollMode'),
-      });
-      return roll;
-    }
+    Dice.TaskCheck({element, actor});
   }
 
 }
