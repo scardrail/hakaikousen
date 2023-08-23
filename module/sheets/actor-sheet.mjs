@@ -190,15 +190,16 @@ export class HakaiKousenActorSheet extends ActorSheet {
     // Get the type of item to create.
     const type = header.dataset.type;
     // Grab any data associated with this control.
-    const data = duplicate(header.dataset);
+    const system = duplicate(header.dataset);
     // Initialize a default name.
     const name = `New ${type.capitalize()}`;
     // Prepare the item object.
     const itemData = {
       name: name,
       type: type,
-      data: data
+      system: system
     };
+    console.log("", itemData)
     // Remove the type from the dataset since it's in the itemData.type prop.
     delete itemData.system["type"];
 
