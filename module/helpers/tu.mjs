@@ -58,6 +58,6 @@ export const uniqTableResult = function(margin, disability) {
     if (margin > 19) {margin = 19}
     else if (margin < -10) {margin = -10}
 
-    // console.log(uniqTable[margin][disability]);
-    return uniqTable[margin][disability];
+    let result = +uniqTable[margin][disability]
+    return result;
 }
