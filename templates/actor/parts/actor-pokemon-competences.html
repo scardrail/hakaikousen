@@ -13,14 +13,22 @@
         </li>
         {{#each competences as |item id|}}
         <li class="item flexrow" data-item-id="{{item._id}}">
-          <div class="item-name">
-            <h4 class="rollable" data-tasktype="competence" data-label="{{item.name}}">{{item.name}}</h4>
-          </div>
-          <div class="item-points item-prop">{{item.system.points}}</div>
+          {{#if (not system.passive)}}
+            <div class="item-name">
+                <h4 class="rollable" data-tasktype="competence" data-label="{{item.name}}">{{item.name}}</h4>
+            </div>
+            <div class="item-points item-prop">{{item.system.points}}</div>
+          {{else}}
+            <div class="item-name">
+              <h4>{{item.name}}</h4>
+            </div>
+            <div class="item-points item-prop"></div>
+          {{/if}}
           <div class="item-controls">
             <a class="item-control item-edit" title="Edit competence"><i class="fas fa-edit"></i></a>
             <a class="item-control item-delete" title="Delete competence"><i class="fas fa-trash"></i></a>
           </div>
+
         </li>
         {{/each}}
       </ol>

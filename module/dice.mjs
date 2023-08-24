@@ -33,12 +33,20 @@ export async function TaskCheck({
         console.log("skill");
         thresholds = difficulty;
         formulas = `{${item.points}d10kh+${tempMod}}cs>=${thresholds}`;
-        break;}
+        break;
+      }
       case "knowledge":{
         console.log("knowledge");
         thresholds = difficulty;
         formulas = `{${item.points}d10kh+${tempMod}}cs>=${thresholds}`;
-        break;}
+        break;
+      }
+      case "competence":{
+        console.log("competence");
+        thresholds = difficulty;
+        formulas = `{${item.points}d10kh+${tempMod}}cs>=${thresholds}`;
+        break;
+      }
     };
     if (dataset.rollType) {
       if (dataset.rollType == 'item') {
