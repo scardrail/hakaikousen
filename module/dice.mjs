@@ -13,8 +13,10 @@ export async function TaskCheck({
     const dataset = element.dataset;
     let checkOptions = await getTaskCheckOptions(dataset.tasktype);    
     let chatOptions = {};
-    item.criticalSuccess = false;
-    item.criticalFailure = false;
+    if (item != null){
+      item.criticalSuccess = false;
+      item.criticalFailure = false;
+    }
     
 
     if (checkOptions.canceled){
@@ -109,17 +111,17 @@ export async function TaskCheck({
             item.criticalFailure = true;
           }
         }
+        // damages calculation      
+        // base damages
+        // if sab damages * 1.5
+        // bonus from objects
+        // mods by climate
+        // Strengths and weaknesses
+        // Critical * 2
+        let damages = item.damages;
+        if (item.criticalSuccess) damages *= 2;
+        item.damages = damages;
       }
-      // damages calculation      
-      // base damages
-      // if sab damages * 1.5
-      // bonus from objects
-      // mods by climate
-      // Strengths and weaknesses
-      // Critical * 2
-      let damages = item.damages;
-      if (item.criticalSuccess) damages *= 2;
-      item.damages = damages;
 
 
 
