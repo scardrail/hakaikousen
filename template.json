@@ -85,7 +85,7 @@
         "trainer": "",
         "ball": "",
         "origin": "",
-        "nature": "",
+        "nature": "none",
         "types": {
           "1": "",
           "2": ""

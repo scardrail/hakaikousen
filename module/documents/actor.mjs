@@ -1,3 +1,4 @@
+import * as Natures from "../helpers/natures.mjs";
 /**
  * Extend the base Actor document by defining a custom roll data structure which is ideal for the Simple system.
  * @extends {Actor}
@@ -63,13 +64,26 @@ export class HakaiKousenActor extends Actor {
 
     // Make modifications to data here. For example:
     const systemData = actorData.system;
-    systemData.surname = actorData.name;
+    console.log("DATA : ",systemData);
+    systemData.description.surname = actorData.name;
+    systemData.humans.obedience = systemData.humans.trust + systemData.humans.training;
+    let naturesResults = Natures.naturesResult(systemData.description.nature);
+    
+    console.log("DATA : ",naturesResults);
+    systemData.food.favTaste = naturesResults.favTaste;
+    systemData.food.detTaste = naturesResults.detTaste;
+    systemData.stats.FOR.nature = +naturesResults.FOR;
+    systemData.stats.END.nature = +naturesResults.END;
+    systemData.stats.CON.nature = +naturesResults.CON;
+    systemData.stats.VOL.nature = +naturesResults.VOL;
+    systemData.stats.DEX.nature = +naturesResults.DEX;
+    
     // Loop through ability scores, and add their modifiers to our sheet output.
     for (let [key, stat] of Object.entries(systemData.stats)) {
       // Calculate the modifier using d20 rules.
       stat.value = stat.base+stat.ev+stat.iv+stat.nature+stat.mega+stat.mod;
     }
-    systemData.humans.obedience = systemData.humans.trust + systemData.humans.training;
+    
   }
 
   /**

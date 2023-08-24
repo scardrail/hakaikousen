@@ -52,7 +52,7 @@
         <input type="number" name="system.stats.{{key}}.base" value="{{stats.base}}" data-dtype="Number" />
         <input type="number" name="system.stats.{{key}}.ev" value="{{stats.ev}}" data-dtype="Number" />
         <input type="number" name="system.stats.{{key}}.iv" value="{{stats.iv}}" data-dtype="Number" />
-        <input type="number" name="system.stats.{{key}}.nature" value="{{stats.nature}}" data-dtype="Number" />
+        <span class="stats-value">{{numberFormat stats.nature decimals=0}}</span>
         <span class="stats-value">{{numberFormat stats.value decimals=0}}</span>
         <input type="number" name="system.stats.{{key}}.mod" value="{{stats.mod}}" data-dtype="Number" />
         <input type="number" name="system.stats.{{key}}.mega" value="{{stats.mega}}" data-dtype="Number" />

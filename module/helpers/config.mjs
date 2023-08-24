@@ -50,3 +50,33 @@ HAKAIKOUSEN.flavor = {
   sour: "HAKAIKOUSEN.sour"
 };
 
+
+HAKAIKOUSEN.nature =  {
+      none: "HAKAIKOUSEN.none",
+      bold: "HAKAIKOUSEN.nature.bold",
+      quirky: "HAKAIKOUSEN.nature.quirky",
+      brave: "HAKAIKOUSEN.nature.brave",
+      calm: "HAKAIKOUSEN.nature.calm",
+      quiet: "HAKAIKOUSEN.nature.quiet",
+      docile: "HAKAIKOUSEN.nature.docile",
+      mild: "HAKAIKOUSEN.nature.mild",
+      rash: "HAKAIKOUSEN.nature.rash",
+      gentle: "HAKAIKOUSEN.nature.gentle",
+      hardy: "HAKAIKOUSEN.nature.hardy",
+      jolly: "HAKAIKOUSEN.nature.jolly",
+      lax: "HAKAIKOUSEN.nature.lax",
+      impish: "HAKAIKOUSEN.nature.impish",
+      sassy: "HAKAIKOUSEN.nature.sassy",
+      naughty: "HAKAIKOUSEN.nature.naughty",
+      modest: "HAKAIKOUSEN.nature.modest",
+      naive: "HAKAIKOUSEN.nature.naive",
+      hasty: "HAKAIKOUSEN.nature.hasty",
+      careful: "HAKAIKOUSEN.nature.careful",
+      bashful: "HAKAIKOUSEN.nature.bashful",
+      relaxed: "HAKAIKOUSEN.nature.relaxed",
+      adamant: "HAKAIKOUSEN.nature.adamant",
+      serious: "HAKAIKOUSEN.nature.serious",
+      lonely: "HAKAIKOUSEN.nature.lonely",
+      timid: "HAKAIKOUSEN.nature.timid"
+    }
+

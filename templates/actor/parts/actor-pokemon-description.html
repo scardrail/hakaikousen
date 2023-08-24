@@ -3,46 +3,52 @@
   <div class="resource flex-group-center">
     <div class="resource-content flexrow flex-center flex-between">
       <label for="system.family" class="resource-label">Family :</label>
-      <input type="text" name="system.family" value="{{system.family}}" data-dtype="Text" />
+      <input type="text" name="system.family" value="{{system.description.family}}" data-dtype="Text" />
     </div>
     <div class="resource-content flexrow flex-center flex-between">
       <label for="system.trainer" class="resource-label">Trainer :</label>
-      <input type="text" name="system.trainer" value="{{system.trainer}}" data-dtype="Text" />
+      <input type="text" name="system.trainer" value="{{system.description.trainer}}" data-dtype="Text" />
     </div>
     <div class="resource-content flexrow flex-center flex-between">
       <label for="system.ball" class="resource-label">Ball :</label>
-      <input type="text" name="system.ball" value="{{system.ball}}" data-dtype="Text" />
+      <input type="text" name="system.ball" value="{{system.description.ball}}" data-dtype="Text" />
     </div>
     <div class="resource-content flexrow flex-center flex-between">
       <label for="system.origin" class="resource-label">Origin :</label>
-      <input type="text" name="system.origin" value="{{system.origin}}" data-dtype="Text" />
+      <input type="text" name="system.origin" value="{{system.description.origin}}" data-dtype="Text" />
     </div>
     <div class="resource-content flexrow flex-center flex-between">
       <label for="system.food.favTaste" class="resource-label">Fav Taste :</label>
       <!-- <input type="text" name="system.food.favTaste" value="{{system.food.favTaste}}" data-dtype="Text" /> -->
-      <label name="system.food.favTaste" class="resource-label">{{system.food.favTaste}}</label>
+      <label name="system.food.favTaste" class="resource-label">{{localize (lookup config.flavor system.food.favTaste)}}</label>
     </div>
   </div>
   <div class="resource flex-group-center">
     <div class="resource-content flexrow flex-center flex-between">
-      <label for="system.nature" class="resource-label">Nature :</label>
-      <input type="text" name="system.nature" value="{{system.nature}}" data-dtype="Text" />
+      <label for="system.description.nature" class="resource-label">Nature :</label>
+      <select name="system.description.nature" style="width:100%">
+        {{#select system.description.nature}}
+        {{#each config.nature as |name type|}}
+        <option value="{{type}}">{{localize name}}</option>
+        {{/each}}
+        {{/select}}
+      </select>
     </div>
     <div class="resource-content flexrow flex-center flex-between">
       <label for="system.talent" class="resource-label">Talent :</label>
-      <input type="text" name="system.talent" value="{{system.talent}}" data-dtype="Text" />
+      <input type="text" name="system.talent" value="{{system.description.talent}}" data-dtype="Text" />
     </div>
     <div class="resource-content flexrow flex-center flex-between">
       <label for="system.height" class="resource-label">Height :</label>
-      <input type="text" name="system.height" value="{{system.height}}" data-dtype="Text" />
+      <input type="text" name="system.height" value="{{system.description.height}}" data-dtype="Text" />
     </div>
     <div class="resource-content flexrow flex-center flex-between">
       <label for="system.weight" class="resource-label">Weight :</label>
-      <input type="text" name="system.weight" value="{{system.weight}}" data-dtype="Text" />
+      <input type="text" name="system.weight" value="{{system.description.weight}}" data-dtype="Text" />
     </div>
     <div class="resource-content flexrow flex-center flex-between">
       <label for="system.food.detTaste" class="resource-label">Det Taste :</label>
-      <label name="system.food.detTaste" class="resource-label">{{system.food.detTaste}}</label>
+      <label name="system.food.detTaste" class="resource-label">{{localize (lookup config.flavor system.food.detTaste)}}</label>
       <!-- <input type="text" name="system.food.detTaste" value="{{system.food.detTaste}}" data-dtype="Text" /> -->
     </div>
   </div>

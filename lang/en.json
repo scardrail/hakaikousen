@@ -42,7 +42,33 @@
     "bitter" : "Bitter",
     "sour" : "Sour",
 
-    
+    "nature": {
+      "bold": "Bold",
+      "quirky": "Quirky",
+      "brave": "Brave",
+      "calm": "Calm",
+      "quiet": "Quiet",
+      "docile": "Docile",
+      "mild": "Mild",
+      "rash": "Rash",
+      "gentle": "Gentle",
+      "hardy": "Hardy",
+      "jolly": "Jolly",
+      "lax": "Lax",
+      "impish": "Impish",
+      "sassy": "Sassy",
+      "naughty": "Naughty",
+      "modest": "Modest",
+      "naive": "Naive",
+      "hasty": "Hasty",
+      "careful": "Careful",
+      "bashful": "Bashful",
+      "relaxed": "Relaxed",
+      "adamant": "Adamant",
+      "serious": "Serious",
+      "lonely": "Lonely",
+      "timid": "Timid"
+    },
     "other": "Other",
     "none": ""
   }
