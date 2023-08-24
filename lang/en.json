@@ -35,6 +35,13 @@
     "zone": "Zone",
     "personal": "Personal",
     "sonic": "Sonic",
+
+    "spicy": "Spicy",
+    "dry" : "Dry",
+    "sweet" : "Sweet",
+    "bitter" : "Bitter",
+    "sour" : "Sour",
+
     
     "other": "Other",
     "none": ""

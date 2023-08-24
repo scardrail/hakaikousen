@@ -36,6 +36,12 @@
     "personal": "Personnel",
     "sonic": "Sonore",
 
+    "spicy": "Acide",
+    "dry": "Sec",
+    "sweet": "Sucré",
+    "bitter": "Amer",
+    "sour": "Epicé",
+
     "other": "Autre",
     "none": ""
   }

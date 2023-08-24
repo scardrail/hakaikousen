@@ -99,8 +99,8 @@
         "training": 0
       },
       "food":{
-        "favTaste":"",
-        "detTaste": ""
+        "favTaste":"none",
+        "detTaste": "none"
       },
       "stats": {
         "DEX": {

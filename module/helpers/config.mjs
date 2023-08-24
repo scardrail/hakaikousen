@@ -39,3 +39,14 @@ HAKAIKOUSEN.attackScope = {
   personal: "HAKAIKOUSEN.personal",
   sonic: "HAKAIKOUSEN.sonic"
 };
+
+
+HAKAIKOUSEN.flavor = {
+  none: "HAKAIKOUSEN.none",
+  spicy: "HAKAIKOUSEN.spicy",
+  dry: "HAKAIKOUSEN.dry",
+  sweet: "HAKAIKOUSEN.sweet",
+  bitter: "HAKAIKOUSEN.bitter",
+  sour: "HAKAIKOUSEN.sour"
+};
+
