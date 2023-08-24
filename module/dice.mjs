@@ -86,7 +86,6 @@ export async function TaskCheck({
       const isPrivate = false;
 
       let rollResult = new Roll(formulas).evaluate({async: false});
-      // let renderedRoll = await rollResult.render({flavor: label, template: chatTemplate});
         // Execute the roll, if needed
       if (!rollResult._evaluated) rollResult.evaluate();
 
@@ -98,7 +97,8 @@ export async function TaskCheck({
         total: isPrivate ? "?" : rollResult._total,
         item: item,
         owner: actor.id,
-        actor: actor
+        actor: actor,
+        tasktype: dataset.tasktype
       }
             // Define chat data
       let chatData = {
@@ -113,20 +113,12 @@ export async function TaskCheck({
         item: item,
         owner: actor.id,
         actor: actor,
+        tasktype: dataset.tasktype,
         sound: CONFIG.sounds.dice
       };
-      
-      console.log(actor);
       chatData.roll = rollResult;
       chatData.content = await renderTemplate(chatOptions.template, cardData);
       let message = ChatMessage.create(chatData);
-
-      // let messageData = {
-      //   speaker: ChatMessage.getSpeaker({ actor: actor }),
-      //   rollMode: game.settings.get('core', 'rollMode'),
-      //   content: renderedRoll,
-      // }
-      // rollResult.toMessage(messageData);
     }
 }
 

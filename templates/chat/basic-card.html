@@ -4,3 +4,6 @@
 {{else}}
     <h2 style="color: rgb(122, 0, 0);">Failure</h2>
 {{/if}}
+{{#if (equals tasktype "technique")}}
+Damages : {{item.damages}}
+{{/if}}

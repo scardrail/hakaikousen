@@ -47,7 +47,7 @@ export const uniqTableResult = function(margin, disability) {
     }
     uniqTable[name] = object;
     }
-    console.log(uniqTable);
+    // console.log(uniqTable);
     
     //adjust values to making it fitting values of the table
     disability = Math.ceil(disability);
