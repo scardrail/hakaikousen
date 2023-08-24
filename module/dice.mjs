@@ -23,6 +23,12 @@ export async function TaskCheck({
         formulas = `d6cs<=${thresholds}`;
         break;
       }
+      case "obedience": {
+        console.log("obedience");
+        thresholds = actor.system.humans.obedience;
+        formulas = `d6cs<=${thresholds}`;
+        break;
+      }
       case "skill": {
         console.log("skill");
         thresholds = difficulty;

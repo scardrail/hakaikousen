@@ -48,7 +48,6 @@ export class HakaiKousenActor extends Actor {
 
     // Make modifications to data here. For example:
     const systemData = actorData.system;
-    
     // Loop through ability scores, and add their modifiers to our sheet output.
     for (let [key, stat] of Object.entries(systemData.stats)) {
       // Calculate the modifier using d20 rules.
@@ -69,6 +68,7 @@ export class HakaiKousenActor extends Actor {
       // Calculate the modifier using d20 rules.
       stat.value = stat.base+stat.ev+stat.iv+stat.nature+stat.mega+stat.mod;
     }
+    systemData.humans.obedience = systemData.humans.trust + systemData.humans.training;
   }
 
   /**

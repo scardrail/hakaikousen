@@ -210,7 +210,7 @@ export class HakaiKousenActorSheet extends ActorSheet {
       type: type,
       system: system
     };
-    console.log("", itemData)
+    // console.log("", itemData)
     // Remove the type from the dataset since it's in the itemData.type prop.
     delete itemData.system["type"];
 
@@ -229,15 +229,13 @@ export class HakaiKousenActorSheet extends ActorSheet {
     let item = null;
     let actor = this.actor;
 
-    if(element.dataset.tasktype != "stats"){
-      console.log("tasktype : ", element.dataset.tasktype);
+    if(element.dataset.tasktype != "stats" && element.dataset.tasktype != "obedience"){
       const itemId = element.closest(".item").dataset.itemId;
-      console.log("itemId : ", itemId);
       item = actor.items.get(itemId).system;
     }
 
-    console.log("actor : ", actor);
-    console.log("item : ", item);
+    // console.log("actor : ", actor);
+    // console.log("item : ", item);
 
     Dice.TaskCheck({element, actor, item});
   }

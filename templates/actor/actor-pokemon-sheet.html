@@ -21,6 +21,31 @@
           </div>
         </div>
       </div>
+      <div class="resources grid grid-2col">
+        <div class="resource flex-group-center">
+          <div class="resource-content flexrow flex-center flex-between">
+            <label for="system.experience_points.value" class="resource-label">Type(s) :</label>
+            <input type="Number" name="system.experience_points.value" value="{{system.experience_points.value}}"
+              data-dtype="Number" />
+          </div>
+        </div>
+        <div class="resource flex-group-center">
+          <div class="resource-content flexrow flex-center flex-between">
+            <div class="humans">
+              <div class="stat flexrow flex-group-center">
+                <label class="resource-label">Trust :</label>
+                <label class="resource-label">Training :</label>
+                <label class="resource-label rollable" data-tasktype="obedience" data-label="Obedience">Obedience :</label>
+              </div>
+              <div class="stat flexrow flex-group-center">
+                <input type="number" name="system.humans.trust" value="{{system.humans.trust}}" data-dtype="Number" />
+                <input type="number" name="system.humans.training" value="{{system.humans.training}}" data-dtype="Number" />
+                <span class="stats-value">{{numberFormat system.humans.obedience decimals=0}}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </header>
 
