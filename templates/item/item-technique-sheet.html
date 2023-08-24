@@ -27,7 +27,14 @@
         </div>
         <div class="resource">
           <label class="resource-label">Scope</label>
-          <input type="text" name="system.scope" value="{{system.scope}}" data-dtype="text" />
+          <!-- <input type="text" name="system.scope" value="{{system.scope}}" data-dtype="text" /> -->
+          <select name="system.scope" style="width:100%">
+            {{#select system.scope}}
+            {{#each config.attackScope as |name type|}}
+            <option value="{{type}}">{{localize name}}</option>
+            {{/each}}
+            {{/select}}
+          </select>
         </div>
       </div>
       <div class="grid grid-2col">

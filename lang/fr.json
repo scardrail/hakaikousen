@@ -30,6 +30,12 @@
     "physic":"Physique",
     "special":"Spécial",
 
+    "target": "Cible",
+    "ray": "Rayon",
+    "zone": "Zone",
+    "personal": "Personnel",
+    "sonic": "Sonore",
+
     "other": "Autre",
     "none": ""
   }

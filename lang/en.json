@@ -29,6 +29,13 @@
 
     "physic": "Physic",
     "special": "Special",
+
+    "target": "Target",
+    "ray": "Ray",
+    "zone": "Zone",
+    "personal": "Personal",
+    "sonic": "Sonic",
+    
     "other": "Other",
     "none": ""
   }

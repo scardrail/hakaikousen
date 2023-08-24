@@ -30,3 +30,12 @@ HAKAIKOUSEN.attackCategory = {
   special: "HAKAIKOUSEN.special",
   other: "HAKAIKOUSEN.other"
 };
+
+HAKAIKOUSEN.attackScope = {
+  none: "HAKAIKOUSEN.none",
+  target: "HAKAIKOUSEN.target",
+  ray: "HAKAIKOUSEN.ray",
+  zone: "HAKAIKOUSEN.zone",
+  personal: "HAKAIKOUSEN.personal",
+  sonic: "HAKAIKOUSEN.sonic"
+};
