@@ -1,7 +1,8 @@
 {
   "Actor": {
     "types": [
-      "trainer"
+      "trainer",
+      "pokemon"
     ],
     "templates": {
       "base": {
@@ -73,6 +74,104 @@
         "items": [],
         "money": 0
       }
+    },
+    "pokemon": {
+      "templates": [
+        "base"
+      ],
+      "description": {
+        "surname": "",
+        "family": "",
+        "trainer": "",
+        "ball": "",
+        "origin": "",
+        "nature": "",
+        "types": {
+          "1": "",
+          "2": ""
+        },
+        "talent": ""
+      },
+      "object": "",
+      "humans": {
+        "trust": 0,
+        "obedience": 0,
+        "training": 0
+      },
+      "food":{
+        "favTaste":"",
+        "detTaste": ""
+      },
+      "stats": {
+        "DEX": {
+          "base": 0,
+          "ev": 0,
+          "iv": 0,
+          "nature": 0,
+          "mega": 0,
+          "value": 0,
+          "mod": 0
+        },
+        "FOR": {
+          "base": 0,
+          "ev": 0,
+          "iv": 0,
+          "nature": 0,
+          "mega": 0,
+          "value": 0,
+          "mod": 0
+        },
+        "CON": {
+          "base": 0,
+          "ev": 0,
+          "iv": 0,
+          "nature": 0,
+          "mega": 0,
+          "value": 0,
+          "mod": 0
+        },
+        "END": {
+          "base": 0,
+          "ev": 0,
+          "iv": 0,
+          "nature": 0,
+          "mega": 0,
+          "value": 0,
+          "mod": 0
+        },
+        "VOL": {
+          "base": 0,
+          "ev": 0,
+          "iv": 0,
+          "nature": 0,
+          "mega": 0,
+          "value": 0,
+          "mod": 0
+        },
+        "VIT": {
+          "base": 0,
+          "ev": 0,
+          "iv": 0,
+          "nature": 0,
+          "mega": 0,
+          "value": 0,
+          "mod": 0
+        },
+        "ENE": {
+          "base": 0,
+          "ev": 0,
+          "iv": 0,
+          "nature": 0,
+          "mega": 0,
+          "value": 0,
+          "mod": 0
+        }
+      },
+      "pc": {
+        "pokemons": [],
+        "items": [],
+        "money": 0
+      }
     }
   },
   "Item": {
@@ -80,7 +179,8 @@
       "item",
       "badges",
       "skill",
-      "knowledge"
+      "knowledge",
+      "competence"
     ],
     "templates": {
       "base": {
@@ -112,6 +212,12 @@
       ]
     },
     "knowledge": {
+      "templates": [
+        "base",
+        "capacities"
+      ]
+    },
+    "competence": {
       "templates": [
         "base",
         "capacities"

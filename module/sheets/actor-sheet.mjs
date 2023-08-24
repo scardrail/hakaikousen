@@ -50,6 +50,11 @@ export class HakaiKousenActorSheet extends ActorSheet {
       this._prepareItems(context);
       // this._prepareCharacterData(context);
     }
+    // Prepare pokemon data and items.
+    if (actorData.type == 'pokemon') {
+      this._prepareItems(context);
+      // this._prepareCharacterData(context);
+    }
 
     // Prepare NPC data and items.
     if (actorData.type == 'npc') {
@@ -91,6 +96,7 @@ export class HakaiKousenActorSheet extends ActorSheet {
     const gear = [];
     const skills = [];
     const knowledges = [];
+    const competences = [];
     const spells = {
       0: [],
       1: [],
@@ -119,6 +125,10 @@ export class HakaiKousenActorSheet extends ActorSheet {
       else if (i.type === 'knowledge') {
         knowledges.push(i);
       }
+      // Append to competences.
+      else if (i.type === 'competence') {
+        competences.push(i);
+      }
       // Append to spells.
       else if (i.type === 'spell') {
         if (i.system.spellLevel != undefined) {
@@ -131,6 +141,7 @@ export class HakaiKousenActorSheet extends ActorSheet {
     context.gear = gear;
     context.skills = skills;
     context.knowledges = knowledges;
+    context.competences = competences;
     context.spells = spells;
   }
 

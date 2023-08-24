@@ -10,6 +10,7 @@
     "systems/hakaikousen/templates/actor/parts/actor-competences.html",
     "systems/hakaikousen/templates/actor/parts/actor-description.html",
     "systems/hakaikousen/templates/actor/parts/actor-items.html",
+    "systems/hakaikousen/templates/actor/parts/actor-capacities.html",
     "systems/hakaikousen/templates/actor/parts/actor-features.html",
 
     //chat templates

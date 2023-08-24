@@ -51,14 +51,24 @@ export class HakaiKousenActor extends Actor {
     // Loop through ability scores, and add their modifiers to our sheet output.
     for (let [key, stat] of Object.entries(systemData.stats)) {
       // Calculate the modifier using d20 rules.
-      stat.value = stat.base+stat.points;
+      stat.value = stat.base+stat.points+stat.mod;
     }
+  }
 
-    // // Loop through ability scores, and add their modifiers to our sheet output.
-    // for (let [key, ability] of Object.entries(systemData.abilities)) {
-    //   // Calculate the modifier using d20 rules.
-    //   ability.mod = Math.floor((ability.value - 10) / 2);
-    // }
+  /**
+   * Prepare Pokemon type specific data
+   */
+  _preparePokemonData(actorData) {
+    if (actorData.type !== 'pokemon') return;
+
+    // Make modifications to data here. For example:
+    const systemData = actorData.system;
+    
+    // Loop through ability scores, and add their modifiers to our sheet output.
+    for (let [key, stat] of Object.entries(systemData.stats)) {
+      // Calculate the modifier using d20 rules.
+      stat.value = stat.base+stat.ev+stat.iv+stat.nature+stat.mega+stat.mod;
+    }
   }
 
   /**
@@ -80,6 +90,7 @@ export class HakaiKousenActor extends Actor {
 
     // Prepare character roll data.
     this._getCharacterRollData(data);
+    this._getPokemonRollData(data);
     this._getNpcRollData(data);
 
     return data;
@@ -90,6 +101,26 @@ export class HakaiKousenActor extends Actor {
    */
   _getCharacterRollData(data) {
     if (this.type !== 'trainer') return;
+
+    // Copy the ability scores to the top level, so that rolls can use
+    // formulas like `@str.mod + 4`.
+    if (data.stats) {
+      for (let [k, v] of Object.entries(data.stats)) {
+        data[k] = foundry.utils.deepClone(v);
+      }
+    }
+
+    // Add level for easier access, or fall back to 0.
+    // if (data.attributes.level) {
+    //   data.lvl = data.attributes.level.value ?? 0;
+    // }
+  }
+
+  /**
+   * Prepare pokemon roll data.
+   */
+  _getPokemonRollData(data) {
+    if (this.type !== 'pokemon') return;
 
     // Copy the ability scores to the top level, so that rolls can use
     // formulas like `@str.mod + 4`.
