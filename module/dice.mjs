@@ -1,13 +1,19 @@
+import * as UniqTable from "../module/helpers/tu.mjs";
+
 export async function TaskCheck({
     element = null,
     actor = null,
     item = null,
     difficulty = 0,
     tempMod = 0,
+    margin = 0,
+    disability = 0,
 
 } = {}){
     const dataset = element.dataset;
-    let checkOptions = await getTaskCheckOptions(dataset.tasktype);
+    let checkOptions = await getTaskCheckOptions(dataset.tasktype);    
+    let chatOptions = {};
+    
 
     if (checkOptions.canceled){
       return;
@@ -47,6 +53,14 @@ export async function TaskCheck({
         formulas = `{${item.points}d10kh+${tempMod}}cs>=${thresholds}`;
         break;
       }
+      case "technique":{
+        console.log("technique");
+        margin = actor.system.stats[dataset.label].value;
+        disability = item.accuracy+difficulty;
+        thresholds = UniqTable.uniqTableResult(margin,disability);
+        formulas = `{d10+${tempMod}}cs>=${thresholds}`;
+        break;
+      }
     };
     if (dataset.rollType) {
       if (dataset.rollType == 'item') {
@@ -57,17 +71,62 @@ export async function TaskCheck({
 
     // Handle rolls that supply the formula directly.
     if (dataset.tasktype) {
-      let label = dataset.label ? `[roll] ${dataset.label}` : '';
-      let chatTemplate = "systems/hakaikousen/templates/chat/basic-card.html";
-      let rollResult = new Roll(formulas).evaluate({async: false});
-      let renderedRoll = await rollResult.render({flavor: label, template: chatTemplate});
-
-      let messageData = {
-        speaker: ChatMessage.getSpeaker({ actor: actor }),
-        rollMode: game.settings.get('core', 'rollMode'),
-        content: renderedRoll,
+      let label = "";
+      if (dataset.tasktype != "technique") {
+        label = dataset.label ? `[roll] ${dataset.label}` : '';
+      }else{
+        label = dataset.label ? `[roll] ${item.name}` : '';
       }
-      rollResult.toMessage(messageData);
+      let chatTemplate = "systems/hakaikousen/templates/chat/basic-card.html";
+      chatOptions = foundry.utils.mergeObject({
+        user: game.user.id,
+        flavor: label,
+        template: chatTemplate
+      }, chatOptions);
+      const isPrivate = false;
+
+      let rollResult = new Roll(formulas).evaluate({async: false});
+      // let renderedRoll = await rollResult.render({flavor: label, template: chatTemplate});
+        // Execute the roll, if needed
+      if (!rollResult._evaluated) rollResult.evaluate();
+
+      let cardData = {
+        formula: isPrivate ? "???" : rollResult._formula,
+        flavor: isPrivate ? null : chatOptions.flavor,
+        user: chatOptions.user,
+        tooltip: isPrivate ? "" : await rollResult.getTooltip(),
+        total: isPrivate ? "?" : rollResult._total,
+        item: item,
+        owner: actor.id,
+        actor: actor
+      }
+            // Define chat data
+      let chatData = {
+        type: CONST.CHAT_MESSAGE_TYPES.ROLL,
+        rollMode: game.settings.get("core", "rollMode"),
+        formula: isPrivate ? "???" : rollResult._formula,
+        flavor: isPrivate ? null : chatOptions.flavor,
+        user: chatOptions.user,
+        speaker: ChatMessage.getSpeaker({ actor: actor }),
+        tooltip: isPrivate ? "" : await rollResult.getTooltip(),
+        total: isPrivate ? "?" : rollResult._total,
+        item: item,
+        owner: actor.id,
+        actor: actor,
+        sound: CONFIG.sounds.dice
+      };
+      
+      console.log(actor);
+      chatData.roll = rollResult;
+      chatData.content = await renderTemplate(chatOptions.template, cardData);
+      let message = ChatMessage.create(chatData);
+
+      // let messageData = {
+      //   speaker: ChatMessage.getSpeaker({ actor: actor }),
+      //   rollMode: game.settings.get('core', 'rollMode'),
+      //   content: renderedRoll,
+      // }
+      // rollResult.toMessage(messageData);
     }
 }
 
