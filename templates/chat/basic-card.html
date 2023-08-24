@@ -1,8 +1,16 @@
 {{> "templates/dice/roll.html"}}
-{{#if (upper total 0)}}
-    <h2 style="color: rgb(0, 94, 0);">Success</h2>
+{{#if item.criticalSuccess}}
+    <h2 style="color: rgb(0, 94, 0);">Cricical Success</h2>
 {{else}}
-    <h2 style="color: rgb(122, 0, 0);">Failure</h2>
+    {{#if item.criticalFailure}}
+        <h2 style="color: rgb(122, 0, 0);">Critical Failure</h2>
+    {{else}}
+        {{#if (upper total 0)}}
+            <h2 style="color: rgb(0, 94, 0);">Success</h2>
+        {{else}}
+            <h2 style="color: rgb(122, 0, 0);">Failure</h2>
+        {{/if}}
+    {{/if}}
 {{/if}}
 {{#if (equals tasktype "technique")}}
 Damages : {{item.damages}}

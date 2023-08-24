@@ -13,6 +13,8 @@ export async function TaskCheck({
     const dataset = element.dataset;
     let checkOptions = await getTaskCheckOptions(dataset.tasktype);    
     let chatOptions = {};
+    item.criticalSuccess = false;
+    item.criticalFailure = false;
     
 
     if (checkOptions.canceled){
@@ -91,8 +93,35 @@ export async function TaskCheck({
       const isPrivate = false;
 
       let rollResult = new Roll(formulas).evaluate({async: false});
-        // Execute the roll, if needed
+
+      // Execute the roll, if needed
       if (!rollResult._evaluated) rollResult.evaluate();
+
+      // Execute the roll, if needed
+      if (dataset.tasktype == "technique") {
+        if(item.category != "other" || item.category != "none"){
+          let ttl = rollResult.dice[0].total+tempMod;
+          let plusFive = thresholds+5;
+          console.log(`Total : ${ttl} VS ${plusFive}`)
+          if (ttl >= plusFive){
+            item.criticalSuccess = true;
+          }else if (rollResult.dice[0].total == 1){
+            item.criticalFailure = true;
+          }
+        }
+      }
+      // damages calculation      
+      // base damages
+      // if sab damages * 1.5
+      // bonus from objects
+      // mods by climate
+      // Strengths and weaknesses
+      // Critical * 2
+      let damages = item.damages;
+      if (item.criticalSuccess) damages *= 2;
+      item.damages = damages;
+
+
 
       let cardData = {
         formula: isPrivate ? "???" : rollResult._formula,
