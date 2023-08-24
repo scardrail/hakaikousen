@@ -19,7 +19,7 @@ export async function TaskCheck({
     switch (dataset.tasktype){
       case "stats": {
         console.log("stats");
-        thresholds = actor.system.stats[dataset.label].value+actor.system.stats[dataset.label].mod+tempMod; 
+        thresholds = actor.system.stats[dataset.label].value+tempMod; 
         formulas = `d6cs<=${thresholds}`;
         break;
       }
