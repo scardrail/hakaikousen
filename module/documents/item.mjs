@@ -24,6 +24,20 @@ export class HakaiKousenItem extends Item {
     const flags = itemData.flags.hakaikousen || {};
 
     systemData.name = itemData.name;
+    this._prepareTechniqueData(itemData);
+  }
+
+  /**
+   * Prepare Technics type specific data.
+   */
+  _prepareTechniqueData(itemData) {
+    if (itemData.type !== 'technique') return;
+
+    // Make modifications to data here. For example:
+    const systemData = itemData.system;
+    if(systemData.category == "physic") {systemData.categoryStat = "FOR"}
+    else if(systemData.category == "special") {systemData.categoryStat = "CON"}
+    else {systemData.categoryStat = "none"}
   }
 
   /**

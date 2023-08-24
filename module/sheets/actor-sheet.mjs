@@ -33,6 +33,8 @@ export class HakaiKousenActorSheet extends ActorSheet {
     // editable, the items array, and the effects array.
     const context = super.getData();
 
+    
+    context.config = CONFIG.HAKAIKOUSEN;
     // Use a safe clone of the actor data for further operations.
     const actorData = this.actor.toObject(false);
 

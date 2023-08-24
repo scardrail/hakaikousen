@@ -55,10 +55,15 @@ export async function TaskCheck({
       }
       case "technique":{
         console.log("technique");
-        margin = actor.system.stats[dataset.label].value;
-        disability = item.accuracy+difficulty;
-        thresholds = UniqTable.uniqTableResult(margin,disability);
-        formulas = `{d10+${tempMod}}cs>=${thresholds}`;
+        if(item.category == "other" || item.category == "none"){
+          thresholds = item.accuracy+difficulty;
+            formulas = `{d100+${tempMod}}cs<=${thresholds}`;
+        }else{
+          margin = actor.system.stats[dataset.label].value;
+          disability = item.accuracy+difficulty;
+          thresholds = UniqTable.uniqTableResult(margin,disability);
+          formulas = `{d10+${tempMod}}cs>=${thresholds}`;
+        }
         break;
       }
     };

@@ -32,6 +32,7 @@ export class HakaiKousenItemSheet extends ItemSheet {
     // Retrieve base data structure.
     const context = super.getData();
 
+    context.config = CONFIG.HAKAIKOUSEN;
     // Use a safe clone of the item data for further operations.
     const itemData = context.item;
 
@@ -45,7 +46,7 @@ export class HakaiKousenItemSheet extends ItemSheet {
     // Add the actor's data to context.system for easier access, as well as flags.
     context.system = itemData.system;
     context.flags = itemData.flags;
-
+    console.log(itemData);
     return context;
   }
 

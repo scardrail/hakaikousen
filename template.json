@@ -230,9 +230,10 @@
         "base"
       ],
       "energy":0,
-      "type":"",
-      "category":"",
-      "scope":"",
+      "type":"none",
+      "category":"none",
+      "categoryStat": "none",
+      "scope":"none",
       "accuracy":100,
       "unavoidable":false,
       "damages":0,

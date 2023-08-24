@@ -5,19 +5,28 @@ export const HAKAIKOUSEN = {};
  * @type {Object}
  */
  HAKAIKOUSEN.stats = {
-  "str": "HAKAIKOUSEN.StatsStr",
-  "dex": "HAKAIKOUSEN.StatsDex",
-  "con": "HAKAIKOUSEN.StatsCon",
-  "int": "HAKAIKOUSEN.StatsInt",
-  "wis": "HAKAIKOUSEN.StatsWis",
-  "cha": "HAKAIKOUSEN.StatsCha"
+  "DEX": "HAKAIKOUSEN.StatsDex",
+  "FOR": "HAKAIKOUSEN.StatsStr",
+  "CON": "HAKAIKOUSEN.StatsCon",
+  "END": "HAKAIKOUSEN.StatsEnd",
+  "VOL": "HAKAIKOUSEN.StatsVol",
+  "VIT": "HAKAIKOUSEN.StatsVit",
+  "ENE": "HAKAIKOUSEN.StatsEne"
 };
 
 HAKAIKOUSEN.statsAbbreviations = {
-  "str": "HAKAIKOUSEN.StatsStrAbbr",
-  "dex": "HAKAIKOUSEN.StatsDexAbbr",
-  "con": "HAKAIKOUSEN.StatsConAbbr",
-  "int": "HAKAIKOUSEN.StatsIntAbbr",
-  "wis": "HAKAIKOUSEN.StatsWisAbbr",
-  "cha": "HAKAIKOUSEN.StatsChaAbbr"
+  "DEX": "HAKAIKOUSEN.StatsDexAbbr",
+  "FOR": "HAKAIKOUSEN.StatsStrAbbr",
+  "CON": "HAKAIKOUSEN.StatsConAbbr",
+  "END": "HAKAIKOUSEN.StatsEndAbbr",
+  "VOL": "HAKAIKOUSEN.StatsWisAbbr",
+  "VIT": "HAKAIKOUSEN.StatsVitAbbr",
+  "ENE": "HAKAIKOUSEN.StatsEneAbbr"
+};
+
+HAKAIKOUSEN.attackCategory = {
+  none: "HAKAIKOUSEN.none",
+  physic: "HAKAIKOUSEN.physic",
+  special: "HAKAIKOUSEN.special",
+  other: "HAKAIKOUSEN.other"
 };

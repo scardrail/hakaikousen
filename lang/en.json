@@ -1,26 +1,35 @@
 {
-    "HAKAIKOUSEN.StatsStr": "Strength",
-    "HAKAIKOUSEN.StatsCon": "Concentration",
-    "HAKAIKOUSEN.StatsDex": "Dexterity",
-    "HAKAIKOUSEN.StatsVit": "Vitality",
-    "HAKAIKOUSEN.StatsEnd": "Stamina",
-    "HAKAIKOUSEN.StatsVol": "Will",
+  "HAKAIKOUSEN": {
+    "StatsDex": "Dexterity",
+    "StatsStr": "Strength",
+    "StatsCon": "Concentration",
+    "StatsEnd": "Stamina",
+    "StatsVol": "Will",
+    "StatsVit": "Vitality",
+    "StatsEne": "Energy",
 
-    "HAKAIKOUSEN.StatsStrAbbr": "FOR",
-    "HAKAIKOUSEN.StatsConAbbr": "CON",
-    "HAKAIKOUSEN.StatsDexAbbr": "DEX",
-    "HAKAIKOUSEN.StatsVitAbbr": "VIT",
-    "HAKAIKOUSEN.StatsEndAbbr": "STA",
-    "HAKAIKOUSEN.StatsVolAbbr": "WIL",
+    "StatsDexAbbr": "DEX",
+    "StatsStrAbbr": "STR",
+    "StatsConAbbr": "CON",
+    "StatsEndAbbr": "STA",
+    "StatsVolAbbr": "WIL",
+    "StatsVitAbbr": "VIT",
+    "StatsEneAbbr": "ENE",
 
-  "HAKAIKOUSEN.EffectCreate": "Create Effect",
-  "HAKAIKOUSEN.EffectToggle": "Toggle Effect",
-  "HAKAIKOUSEN.EffectEdit": "Edit Effect",
-  "HAKAIKOUSEN.EffectDelete": "Delete Effect",
+    "EffectCreate": "Create Effect",
+    "EffectToggle": "Toggle Effect",
+    "EffectEdit": "Edit Effect",
+    "EffectDelete": "Delete Effect",
 
-  "HAKAIKOUSEN.Add": "Add",
-  "HAKAIKOUSEN.Success": "Success",
-  "HAKAIKOUSEN.Failure": "Failure",
+    "Add": "Add",
+    "Success": "Success",
+    "Failure": "Failure",
 
-  "HAKAIKOUSEN.Stat": "Stat : "
+    "Stat": "Stat : ",
+
+    "physic": "Physic",
+    "special": "Special",
+    "other": "Other",
+    "none": ""
+  }
 }

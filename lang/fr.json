@@ -1,26 +1,36 @@
 {
-  "HAKAIKOUSEN.StatsStr": "Force",
-  "HAKAIKOUSEN.StatsCon": "Concentration",
-  "HAKAIKOUSEN.StatsDex": "Dextérité",
-  "HAKAIKOUSEN.StatsVit": "Vitalité",
-  "HAKAIKOUSEN.StatsEnd": "Endurance",
-  "HAKAIKOUSEN.StatsVol": "Volonté",
+  "HAKAIKOUSEN" : {
+    "StatsDex": "Dextérité",
+    "StatsStr": "Force",
+    "StatsCon": "Concentration",
+    "StatsEnd": "Endurance",
+    "StatsVol": "Volonté",
+    "StatsVit": "Vitalité",
+    "StatsEne": "Energie",
 
-  "HAKAIKOUSEN.StatsStrAbbr": "FOR",
-  "HAKAIKOUSEN.StatsConAbbr": "CON",
-  "HAKAIKOUSEN.StatsDexAbbr": "DEX",
-  "HAKAIKOUSEN.StatsVitAbbr": "VIT",
-  "HAKAIKOUSEN.StatsEndAbbr": "END",
-  "HAKAIKOUSEN.StatsVolAbbr": "VOL",
+    "StatsDexAbbr": "DEX",
+    "StatsStrAbbr": "FOR",
+    "StatsConAbbr": "CON",
+    "StatsEndAbbr": "END",
+    "StatsVolAbbr": "VOL",
+    "StatsVitAbbr": "VIT",
+    "StatsEneAbbr": "ENE",
 
-  "HAKAIKOUSEN.EffectCreate": "Créer un effet",
-  "HAKAIKOUSEN.EffectToggle": "Basculer un effet",
-  "HAKAIKOUSEN.EffectEdit": "Modifier un effet",
-  "HAKAIKOUSEN.EffectDelete": "Effacer un effet",
+    "EffectCreate": "Créer un effet",
+    "EffectToggle": "Basculer un effet",
+    "EffectEdit": "Modifier un effet",
+    "EffectDelete": "Effacer un effet",
 
-  "HAKAIKOUSEN.Add": "Ajouter",
-  "HAKAIKOUSEN.Success": "Succès",
-  "HAKAIKOUSEN.Failure": "Echec",
-  
-  "HAKAIKOUSEN.Stat": "Stat : "
+    "Add": "Ajouter",
+    "Success": "Succès",
+    "Failure": "Echec",
+    
+    "Stat": "Stat : ",
+
+    "physic":"Physique",
+    "special":"Spécial",
+
+    "other": "Autre",
+    "none": ""
+  }
 }
