@@ -12,6 +12,6 @@
         {{/if}}
     {{/if}}
 {{/if}}
-{{#if (equals tasktype "technique")}}
+{{#if (and (equals tasktype "technique") hurts)}}
 Damages : {{item.damages}}
 {{/if}}
