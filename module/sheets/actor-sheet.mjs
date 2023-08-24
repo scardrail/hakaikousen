@@ -97,6 +97,7 @@ export class HakaiKousenActorSheet extends ActorSheet {
     const skills = [];
     const knowledges = [];
     const competences = [];
+    const techniques = [];    
     const spells = {
       0: [],
       1: [],
@@ -129,6 +130,10 @@ export class HakaiKousenActorSheet extends ActorSheet {
       else if (i.type === 'competence') {
         competences.push(i);
       }
+      // Append to techniques.
+      else if (i.type === 'technique') {
+        techniques.push(i);
+      }
       // Append to spells.
       else if (i.type === 'spell') {
         if (i.system.spellLevel != undefined) {
@@ -142,6 +147,7 @@ export class HakaiKousenActorSheet extends ActorSheet {
     context.skills = skills;
     context.knowledges = knowledges;
     context.competences = competences;
+    context.techniques = techniques;
     context.spells = spells;
   }
 

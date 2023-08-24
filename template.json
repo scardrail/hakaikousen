@@ -180,7 +180,8 @@
       "badges",
       "skill",
       "knowledge",
-      "competence"
+      "competence",
+      "technique"
     ],
     "templates": {
       "base": {
@@ -223,6 +224,20 @@
         "capacities"
       ],
       "passive" : false
+    },
+    "technique":{
+      "templates": [
+        "base"
+      ],
+      "energy":0,
+      "type":"",
+      "category":"",
+      "scope":"",
+      "accuracy":100,
+      "unavoidable":false,
+      "damages":0,
+      "hurts":true
+
     }
   }
 }
