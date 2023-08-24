@@ -15,6 +15,7 @@
 
     // Pokemon partials.
     "systems/hakaikousen/templates/actor/parts/actor-pokemon-competences.html",
+    "systems/hakaikousen/templates/actor/parts/actor-pokemon-description.html",
 
     //chat templates
     "systems/hakaikousen/templates/chat/basic-card.html",
