@@ -13,6 +13,9 @@
     "systems/hakaikousen/templates/actor/parts/actor-capacities.html",
     "systems/hakaikousen/templates/actor/parts/actor-features.html",
 
+    // Pokemon partials.
+    "systems/hakaikousen/templates/actor/parts/actor-pokemon-competences.html",
+
     //chat templates
     "systems/hakaikousen/templates/chat/basic-card.html",
     "systems/hakaikousen/templates/chat/rollCheck.html",
