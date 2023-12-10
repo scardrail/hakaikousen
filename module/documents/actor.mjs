@@ -1,4 +1,5 @@
 import * as Natures from "../helpers/natures.mjs";
+import * as Sensibilities from "../helpers/sensibilities.mjs";
 /**
  * Extend the base Actor document by defining a custom roll data structure which is ideal for the Simple system.
  * @extends {Actor}
@@ -62,13 +63,14 @@ export class HakaiKousenActor extends Actor {
   _preparePokemonData(actorData) {
     if (actorData.type !== 'pokemon') return;
 
-    // Make modifications to data here. For example:
+    // Update Pokemon Data 
     const systemData = actorData.system;
     console.log("DATA : ",systemData);
     systemData.description.surname = actorData.name;
     systemData.humans.obedience = systemData.humans.trust + systemData.humans.training;
-    let naturesResults = Natures.naturesResult(systemData.description.nature);
     
+    // get natures relative informations
+    let naturesResults = Natures.naturesResult(systemData.description.nature);
     console.log("DATA : ",naturesResults);
     systemData.food.favTaste = naturesResults.favTaste;
     systemData.food.detTaste = naturesResults.detTaste;
@@ -78,10 +80,28 @@ export class HakaiKousenActor extends Actor {
     systemData.stats.VOL.nature = +naturesResults.VOL;
     systemData.stats.DEX.nature = +naturesResults.DEX;
     
+    if(systemData.description.types.one != "none"){
+      let sensibilitiesResultA = Sensibilities.sensibilitiesResult(systemData.description.types.one);
+      
+      for (const [key, value] of Object.entries(sensibilitiesResultA)) {
+        systemData.sensibilities[key] *= value
+      }
+    }else{
+      for (const [key, value] of Object.entries(systemData.sensibilities)) {
+        systemData.sensibilities[key] = 1;
+      }
+    }
+    if(systemData.description.types.two != "none" && systemData.description.types.two != systemData.description.types.one){
+      let sensibilitiesResultB = Sensibilities.sensibilitiesResult(systemData.description.types.two);
+      for (const [key, value] of Object.entries(sensibilitiesResultB)) {
+        systemData.sensibilities[key] *= value
+      }
+    }
     // Loop through ability scores, and add their modifiers to our sheet output.
     for (let [key, stat] of Object.entries(systemData.stats)) {
       // Calculate the modifier using d20 rules.
-      stat.value = stat.base+stat.ev+stat.iv+stat.nature+stat.mega+stat.mod;
+      // stat.value = stat.base+stat.ev+stat.iv+stat.nature+stat.mega+stat.mod;
+      stat.max = stat.base+stat.ev+stat.iv+stat.nature+stat.mega+stat.mod;
     }
     
   }

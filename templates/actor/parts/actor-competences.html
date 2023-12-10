@@ -5,16 +5,16 @@
           <label class="resource-label">STATS :</label>
           <label class="resource-label">BASE :</label>
           <label class="resource-label">POINTS :</label>
+          <label class="resource-label">CURRENT :</label>
           <label class="resource-label">TOTAL :</label>
-          <label class="resource-label">MOD :</label>
         </div>
         {{#each system.stats as |stats key|}}
-        <div class="stat flexrow flex-group-center">
-          <label for="system.stats.{{key}}.value" class="resource-label  rollable" data-tasktype="stats" data-label="{{key}}">{{key}}</label>
-          <input type="number" name="system.stats.{{key}}.base" value="{{stats.base}}" data-dtype="Number" />
-          <input type="number" name="system.stats.{{key}}.points" value="{{stats.points}}" data-dtype="Number" />
-          <span class="stats-value">{{numberFormat stats.value decimals=0}}</span>
-          <input type="number" name="system.stats.{{key}}.mod" value="{{stats.mod}}" data-dtype="Number" />
+          <div class="stat flexrow flex-group-center">
+            <label for="system.stats.{{key}}.value" class="resource-label  rollable" data-tasktype="stats" data-label="{{key}}">{{key}}</label>
+            <input type="number" name="system.stats.{{key}}.base" value="{{stats.base}}" data-dtype="Number" />
+            <input type="number" name="system.stats.{{key}}.points" value="{{stats.points}}" data-dtype="Number" />
+            <input type="number" name="system.stats.{{key}}.value" value="{{stats.value}}" data-dtype="Number" />
+            <span class="stats-value">{{numberFormat stats.max decimals=0}}</span>
         </div>
         {{/each}}
     </div>

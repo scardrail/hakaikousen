@@ -41,8 +41,8 @@
       <label class="resource-label">EV :</label>
       <label class="resource-label">IV :</label>
       <label class="resource-label">NATURE :</label>
+      <label class="resource-label">CURRENT :</label>
       <label class="resource-label">TOTAL :</label>
-      <label class="resource-label">MOD :</label>
       <label class="resource-label">MEGA :</label>
     </div>
     {{#each system.stats as |stats key|}}
@@ -53,8 +53,8 @@
         <input type="number" name="system.stats.{{key}}.ev" value="{{stats.ev}}" data-dtype="Number" />
         <input type="number" name="system.stats.{{key}}.iv" value="{{stats.iv}}" data-dtype="Number" />
         <span class="stats-value">{{numberFormat stats.nature decimals=0}}</span>
-        <span class="stats-value">{{numberFormat stats.value decimals=0}}</span>
-        <input type="number" name="system.stats.{{key}}.mod" value="{{stats.mod}}" data-dtype="Number" />
+        <input type="number" name="system.stats.{{key}}.value" value="{{stats.value}}" data-dtype="Number" max="{{stats.max}}" />
+        <span class="stats-value">{{numberFormat stats.max decimals=0}}</span>
         <input type="number" name="system.stats.{{key}}.mega" value="{{stats.mega}}" data-dtype="Number" />
       </div>
     {{/each}}

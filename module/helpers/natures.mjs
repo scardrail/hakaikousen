@@ -43,9 +43,6 @@ none;0;0;0;0;0;none;none`
     }
     natures[name] = object;
     }
-    console.log(natures);
-    console.log(nature);
-    console.log(natures[nature]);
 
     return natures[nature];
 }

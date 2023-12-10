@@ -36,37 +36,43 @@
           "base": 0,
           "points": 0,
           "value": 0,
-          "mod": 0
+          "mod": 0,
+          "max": 0
         },
         "FOR": {
           "base": 0,
           "points": 0,
           "value": 0,
-          "mod": 0
+          "mod": 0,
+          "max": 0
         },
         "CON": {
           "base": 0,
           "points": 0,
           "value": 0,
-          "mod": 0
+          "mod": 0,
+          "max": 0
         },
         "END": {
           "base": 0,
           "points": 0,
           "value": 0,
-          "mod": 0
+          "mod": 0,
+          "max": 0
         },
         "VOL": {
           "base": 0,
           "points": 0,
           "value": 0,
-          "mod": 0
+          "mod": 0,
+          "max": 0
         },
         "VIT": {
           "base": 0,
           "points": 0,
           "value": 0,
-          "mod": 0
+          "mod": 0,
+          "max": 0
         }
       },
       "pc": {
@@ -87,8 +93,8 @@
         "origin": "",
         "nature": "none",
         "types": {
-          "1": "",
-          "2": ""
+          "one": "none",
+          "two": "none"
         },
         "talent": ""
       },
@@ -110,7 +116,8 @@
           "nature": 0,
           "mega": 0,
           "value": 0,
-          "mod": 0
+          "mod": 0,
+          "max": 0
         },
         "FOR": {
           "base": 0,
@@ -119,7 +126,8 @@
           "nature": 0,
           "mega": 0,
           "value": 0,
-          "mod": 0
+          "mod": 0,
+          "max": 0
         },
         "CON": {
           "base": 0,
@@ -128,7 +136,8 @@
           "nature": 0,
           "mega": 0,
           "value": 0,
-          "mod": 0
+          "mod": 0,
+          "max": 0
         },
         "END": {
           "base": 0,
@@ -137,7 +146,8 @@
           "nature": 0,
           "mega": 0,
           "value": 0,
-          "mod": 0
+          "mod": 0,
+          "max": 0
         },
         "VOL": {
           "base": 0,
@@ -146,7 +156,8 @@
           "nature": 0,
           "mega": 0,
           "value": 0,
-          "mod": 0
+          "mod": 0,
+          "max": 0
         },
         "VIT": {
           "base": 0,
@@ -155,22 +166,45 @@
           "nature": 0,
           "mega": 0,
           "value": 0,
-          "mod": 0
+          "mod": 0,
+          "max": 0
         },
         "ENE": {
-          "base": 0,
+          "base": 50,
           "ev": 0,
           "iv": 0,
           "nature": 0,
           "mega": 0,
           "value": 0,
-          "mod": 0
+          "mod": 0,
+          "max": 0
         }
       },
       "pc": {
         "pokemons": [],
         "items": [],
         "money": 0
+      },
+      "hasDodge" : false,
+      "sensibilities":{
+        "Normal": 1,
+        "Fire": 1,
+        "Water": 1,
+        "Electric": 1,
+        "Grass": 1,
+        "Ice": 1,
+        "Fighting": 1,
+        "Poison": 1,
+        "Ground": 1,
+        "Flying": 1,
+        "Psychic": 1,
+        "Bug": 1,
+        "Rock": 1,
+        "Ghost": 1,
+        "Dragon": 1,
+        "Dark": 1,
+        "Steel": 1,
+        "Fairy": 1
       }
     }
   },
@@ -238,6 +272,25 @@
       "unavoidable":false,
       "damages":0,
       "hurts":true
+
+    },
+    "dex":{
+      "templates": [
+        "base"
+      ],
+      "number":"",
+      "idEvolution":"none",
+      "obtention":"base",
+      "height": "",
+      "weight": "",
+      "stats": {
+        "DEX": 0,
+        "FOR": 0,
+        "CON": 0,
+        "END": 0,
+        "VOL": 0,
+        "VIT": 0
+      }
 
     }
   }

@@ -4,26 +4,30 @@ export async function TaskCheck({
     element = null,
     actor = null,
     item = null,
+    checkOptions = null,
     difficulty = 0,
     tempMod = 0,
     margin = 0,
     disability = 0,
+    needDialog = true
 
 } = {}){
     const dataset = element.dataset;
-    let checkOptions = await getTaskCheckOptions(dataset.tasktype);    
+    // Gestion du dialogue pour les options de vérification des tâches
+    checkOptions = await getTaskCheckOptions(dataset.tasktype);
+    if (checkOptions.canceled) {
+        return;
+    }
+    difficulty = checkOptions.difficulty;
+    tempMod = checkOptions.tempMod;
+    console.log("post check" + dataset.tasktype);
+
+    element.dataset.tasktype = dataset.tasktype;
     let chatOptions = {};
     if (item != null){
       item.criticalSuccess = false;
       item.criticalFailure = false;
     }
-    
-
-    if (checkOptions.canceled){
-      return;
-    }
-    difficulty = checkOptions.difficulty;
-    tempMod = checkOptions.tempMod;
     let thresholds = 0;
     let formulas = null;
     switch (dataset.tasktype){
@@ -36,7 +40,7 @@ export async function TaskCheck({
       case "obedience": {
         console.log("obedience");
         thresholds = actor.system.humans.obedience;
-        formulas = `d6cs<=${thresholds}`;
+        formulas = `d8cs<=${thresholds}`;
         break;
       }
       case "skill": {
@@ -111,7 +115,7 @@ export async function TaskCheck({
             item.criticalFailure = true;
           }
         }
-        // damages calculation      
+        // damages calculation
         // base damages
         // if sab damages * 1.5
         // bonus from objects
@@ -154,7 +158,6 @@ export async function TaskCheck({
       };
       chatData.roll = rollResult;
       chatData.content = await renderTemplate(chatOptions.template, cardData);
-      let message = ChatMessage.create(chatData);
     }
 }
 

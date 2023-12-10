@@ -1,4 +1,18 @@
 <ol class="items-list">
+  <table cellspacing="0" cellpadding="0">
+    <tbody>
+      <tr>
+        {{#each config.typesHeaders as |typeHeader id|}}
+          <th class="type"><img src="{{typeHeader}}"></th>
+        {{/each}}
+      </tr>
+      <tr>
+        {{#each system.sensibilities as |sensibility id|}}
+          <td style="text-align: center;vertical-align: middle;">{{sensibility}}</td>
+        {{/each}}
+      </tr>
+    </tbody>
+  </table>
   <li class="item flexrow items-header">
     <div class="item-name">Name</div>
     <div class="item-energy">Energy</div>
