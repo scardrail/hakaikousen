@@ -1,7 +1,18 @@
 {
 "Actor": {
-  "types": ["character"],
+  "types": ["character", "trainer"],
   "htmlFields": ["biography"],
+  "templates": {
+    "base": {
+      "description": {
+        "gender": "none",
+        "height": 0,
+        "weight": 0
+      },
+      "experience_points": 0,
+      "biography": ""
+    }
+  },
   "character": {
     "biography": "",
     "health": {
@@ -16,17 +27,107 @@
     },
     "attributes": {},
     "groups": {}
+  },
+  "trainer": {
+    "templates": [
+      "base"
+    ],
+    "money": 0,
+    "description": {
+      "name": "",
+      "age": 0,
+      "skin": "",
+      "origin": "none",
+      "eyes": "",
+      "hair": "",
+      "body_type": "",
+      "vocation": "",
+      "nature": ""
+    },
+    "stats": {
+      "DEX": {
+        "min": 0,
+        "value": 0,
+        "mod": 0,
+        "max": 0
+      },
+      "FOR": {
+        "min": 0,
+        "value": 0,
+        "mod": 0,
+        "max": 0
+      },
+      "CON": {
+        "min": 0,
+        "value": 0,
+        "mod": 0,
+        "max": 0
+      },
+      "END": {
+        "min": 0,
+        "value": 0,
+        "mod": 0,
+        "max": 0
+      },
+      "VOL": {
+        "min": 0,
+        "value": 0,
+        "mod": 0,
+        "max": 0
+      },
+      "VIT": {
+        "min": 0,
+        "value": 0,
+        "mod": 0,
+        "max": 0
+      }
+    },
+    "attributes": {},
+    "groups": {}
   }
 },
 "Item": {
-  "types": ["item"],
+  "types": [
+    "item",
+    "badges"
+  ],
   "htmlFields": ["description"],
+  "templates": {
+    "att":{
+      "attributes": {},
+      "groups": {}
+    }
+  },
   "item": {
+    "templates": [
+      "att"
+    ],
     "description": "",
     "quantity": 1,
-    "weight": 0,
-    "attributes": {},
-    "groups": {}
+    "weight": 0
+  },
+  "technique": {
+    "templates": [
+      "att"
+    ],
+    "description": "",
+    "energy": {
+      "min":0,
+      "value":0,
+      "max":0
+    },
+    "accuracy": {
+      "min": 0,
+      "value": 100,
+      "max": 100
+    },
+    "type": "none",
+    "category": "none",
+    "categoryStat": "none",
+    "scope": "none",
+    "unavoidable": false,
+    "damages": 0,
+    "hurts": true
   }
 }
 }
