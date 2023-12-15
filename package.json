@@ -1,23 +1,21 @@
 {
   "name": "hakaikousen",
   "version": "1.0.0",
-  "description": "CSS compiler for the Hakai Kousen system",
+  "description": "CSS compiler for the hakaikousen system",
   "scripts": {
-    "build": "gulp build",
-    "compile": "gulp css",
+    "css": "gulp css",
     "watch": "gulp",
     "gulp": "gulp"
   },
   "browserslist": [
     "last 3 versions"
   ],
-  "author": "Scardrail",
+  "author": "",
   "license": "MIT",
   "private": true,
   "dependencies": {
-    "gulp": "^4",
-    "gulp-autoprefixer": "^8",
-    "gulp-sass": "^4",
-    "gulp-sourcemaps": "^3"
-  }
+    "gulp": "^4.0.2",
+    "gulp-less": "^4.0.1"
+  },
+  "devDependencies": {}
 }

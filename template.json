@@ -1,297 +1,133 @@
 {
-  "Actor": {
-    "types": [
-      "trainer",
-      "pokemon"
-    ],
-    "templates": {
-      "base": {
-        "description": {
-          "gender": "",
-          "height": "",
-          "weight": ""
-        },
-        "experience_points": 0,
-        "biography": ""
-      }
-    },
-    "trainer": {
-      "templates": [
-        "base"
-      ],
+"Actor": {
+  "types": ["character", "trainer"],
+  "htmlFields": ["biography"],
+  "templates": {
+    "base": {
       "description": {
-        "name": "",
-        "age": "",
-        "skin": "",
-        "origin": "",
-        "eyes": "",
-        "hair": "",
-        "body_type": "",
-        "vocation": "",
-        "nature": ""
+        "gender": "none",
+        "height": 0,
+        "weight": 0
       },
-      "money": 0,
-      "stats": {
-        "DEX": {
-          "base": 0,
-          "points": 0,
-          "value": 0,
-          "mod": 0,
-          "max": 0
-        },
-        "FOR": {
-          "base": 0,
-          "points": 0,
-          "value": 0,
-          "mod": 0,
-          "max": 0
-        },
-        "CON": {
-          "base": 0,
-          "points": 0,
-          "value": 0,
-          "mod": 0,
-          "max": 0
-        },
-        "END": {
-          "base": 0,
-          "points": 0,
-          "value": 0,
-          "mod": 0,
-          "max": 0
-        },
-        "VOL": {
-          "base": 0,
-          "points": 0,
-          "value": 0,
-          "mod": 0,
-          "max": 0
-        },
-        "VIT": {
-          "base": 0,
-          "points": 0,
-          "value": 0,
-          "mod": 0,
-          "max": 0
-        }
-      },
-      "pc": {
-        "pokemons": [],
-        "items": [],
-        "money": 0
-      }
-    },
-    "pokemon": {
-      "templates": [
-        "base"
-      ],
-      "description": {
-        "surname": "",
-        "family": "",
-        "trainer": "",
-        "ball": "",
-        "origin": "",
-        "nature": "none",
-        "types": {
-          "one": "none",
-          "two": "none"
-        },
-        "talent": ""
-      },
-      "object": "",
-      "humans": {
-        "trust": 0,
-        "obedience": 0,
-        "training": 0
-      },
-      "food":{
-        "favTaste":"none",
-        "detTaste": "none"
-      },
-      "stats": {
-        "DEX": {
-          "base": 0,
-          "ev": 0,
-          "iv": 0,
-          "nature": 0,
-          "mega": 0,
-          "value": 0,
-          "mod": 0,
-          "max": 0
-        },
-        "FOR": {
-          "base": 0,
-          "ev": 0,
-          "iv": 0,
-          "nature": 0,
-          "mega": 0,
-          "value": 0,
-          "mod": 0,
-          "max": 0
-        },
-        "CON": {
-          "base": 0,
-          "ev": 0,
-          "iv": 0,
-          "nature": 0,
-          "mega": 0,
-          "value": 0,
-          "mod": 0,
-          "max": 0
-        },
-        "END": {
-          "base": 0,
-          "ev": 0,
-          "iv": 0,
-          "nature": 0,
-          "mega": 0,
-          "value": 0,
-          "mod": 0,
-          "max": 0
-        },
-        "VOL": {
-          "base": 0,
-          "ev": 0,
-          "iv": 0,
-          "nature": 0,
-          "mega": 0,
-          "value": 0,
-          "mod": 0,
-          "max": 0
-        },
-        "VIT": {
-          "base": 0,
-          "ev": 0,
-          "iv": 0,
-          "nature": 0,
-          "mega": 0,
-          "value": 0,
-          "mod": 0,
-          "max": 0
-        },
-        "ENE": {
-          "base": 50,
-          "ev": 0,
-          "iv": 0,
-          "nature": 0,
-          "mega": 0,
-          "value": 0,
-          "mod": 0,
-          "max": 0
-        }
-      },
-      "pc": {
-        "pokemons": [],
-        "items": [],
-        "money": 0
-      },
-      "hasDodge" : false,
-      "sensibilities":{
-        "Normal": 1,
-        "Fire": 1,
-        "Water": 1,
-        "Electric": 1,
-        "Grass": 1,
-        "Ice": 1,
-        "Fighting": 1,
-        "Poison": 1,
-        "Ground": 1,
-        "Flying": 1,
-        "Psychic": 1,
-        "Bug": 1,
-        "Rock": 1,
-        "Ghost": 1,
-        "Dragon": 1,
-        "Dark": 1,
-        "Steel": 1,
-        "Fairy": 1
-      }
+      "experience_points": 0,
+      "biography": ""
     }
   },
-  "Item": {
-    "types": [
-      "item",
-      "badges",
-      "skill",
-      "knowledge",
-      "competence",
-      "technique"
+  "character": {
+    "biography": "",
+    "health": {
+      "value": 10,
+      "min": 0,
+      "max": 10
+    },
+    "power": {
+      "value": 5,
+      "min": 0,
+      "max": 5
+    },
+    "attributes": {},
+    "groups": {}
+  },
+  "trainer": {
+    "templates": [
+      "base"
     ],
-    "templates": {
-      "base": {
-        "name": "",
-        "description": ""
+    "money": 0,
+    "description": {
+      "name": "",
+      "age": 0,
+      "skin": "",
+      "origin": "none",
+      "eyes": "",
+      "hair": "",
+      "body_type": "",
+      "vocation": "",
+      "nature": ""
+    },
+    "stats": {
+      "DEX": {
+        "min": 0,
+        "value": 0,
+        "mod": 0,
+        "max": 0
       },
-      "capacities": {
-        "points": 0,
-        "specialization": ""
+      "FOR": {
+        "min": 0,
+        "value": 0,
+        "mod": 0,
+        "max": 0
+      },
+      "CON": {
+        "min": 0,
+        "value": 0,
+        "mod": 0,
+        "max": 0
+      },
+      "END": {
+        "min": 0,
+        "value": 0,
+        "mod": 0,
+        "max": 0
+      },
+      "VOL": {
+        "min": 0,
+        "value": 0,
+        "mod": 0,
+        "max": 0
+      },
+      "VIT": {
+        "min": 0,
+        "value": 0,
+        "mod": 0,
+        "max": 0
       }
     },
-    "items": {
-      "templates": [
-        "base"
-      ],
-      "type": "",
-      "quantity": 1,
-      "price": 0
-    },
-    "badges": {
-      "templates": [
-        "base"
-      ]
-    },
-    "skill": {
-      "templates": [
-        "base",
-        "capacities"
-      ]
-    },
-    "knowledge": {
-      "templates": [
-        "base",
-        "capacities"
-      ]
-    },
-    "competence": {
-      "templates": [
-        "base",
-        "capacities"
-      ],
-      "passive" : false
-    },
-    "technique":{
-      "templates": [
-        "base"
-      ],
-      "energy":0,
-      "type":"none",
-      "category":"none",
-      "categoryStat": "none",
-      "scope":"none",
-      "accuracy":100,
-      "unavoidable":false,
-      "damages":0,
-      "hurts":true
-
-    },
-    "dex":{
-      "templates": [
-        "base"
-      ],
-      "number":"",
-      "idEvolution":"none",
-      "obtention":"base",
-      "height": "",
-      "weight": "",
-      "stats": {
-        "DEX": 0,
-        "FOR": 0,
-        "CON": 0,
-        "END": 0,
-        "VOL": 0,
-        "VIT": 0
-      }
-
-    }
+    "attributes": {},
+    "groups": {}
   }
+},
+"Item": {
+  "types": [
+    "item",
+    "badges"
+  ],
+  "htmlFields": ["description"],
+  "templates": {
+    "att":{
+      "attributes": {},
+      "groups": {}
+    }
+  },
+  "item": {
+    "templates": [
+      "att"
+    ],
+    "description": "",
+    "quantity": 1,
+    "weight": 0
+  },
+  "technique": {
+    "templates": [
+      "att"
+    ],
+    "description": "",
+    "energy": {
+      "min":0,
+      "value":0,
+      "max":0
+    },
+    "accuracy": {
+      "min": 0,
+      "value": 100,
+      "max": 100
+    },
+    "type": "none",
+    "category": "none",
+    "categoryStat": "none",
+    "scope": "none",
+    "unavoidable": false,
+    "damages": 0,
+    "hurts": true
+  }
+}
 }
